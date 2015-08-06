@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import org.fxpart.combobox.AutosuggestComboBoxList;
 import org.fxpart.combobox.KeyValueString;
@@ -19,6 +20,9 @@ public class Controller implements Initializable {
 
     @FXML
     AutosuggestComboBoxList<KeyValueString> autosuggest;
+
+    @FXML
+    Button testFocus, getFocus;
 
     @FXML
     ComboBox cb;
@@ -44,5 +48,9 @@ public class Controller implements Initializable {
     protected void finalize() throws Throwable {
         super.finalize();
         autosuggest.stopSearch();
+    }
+
+    public void testFocus(ActionEvent actionEvent) {
+        autosuggest.requestFocus();
     }
 }
