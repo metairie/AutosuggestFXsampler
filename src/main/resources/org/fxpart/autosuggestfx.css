@@ -1,0 +1,17 @@
+.highlighted-dropdown {
+    -fx-font-weight: bold;
+}
+
+.usual-dropdown {
+    -fx-font-weight: normal;
+}
+
+.search-dropdown {
+    -fx-background-color: greenyellow;
+    -fx-text-fill: white;
+}
+
+.nosearch {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: white;
+}
