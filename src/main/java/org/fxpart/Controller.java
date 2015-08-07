@@ -20,7 +20,7 @@ public class Controller implements Initializable {
     private final static Logger LOG = LoggerFactory.getLogger(Controller.class);
 
     @FXML
-    AutosuggestComboBoxList<KeyValueString> autosuggest;
+    AutosuggestComboBoxList<KeyValueString> autosuggest = new AutosuggestComboBoxList<>();
 
     @FXML
     ComboBox<LocationBean> cb;
@@ -31,9 +31,11 @@ public class Controller implements Initializable {
         autosuggest.setAcceptFreeTextValue(true);
         autosuggest.setLazyMode(false); // if no item is selected, lazy is useless
         autosuggest.setDelay(300);
+        //autosuggest.setColumnSeparator(" - ");
+        //autosuggest.setColumnSeparatorVisible(true);
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(),
-                item -> String.format("%s", item.getValue()),
-                item -> String.format("%s x %s", item.getKey(), item.getValue())
+                item -> String.format("%s", item.getValue(), item.getKey()),
+                item -> String.format("%s" + autosuggest.getColumnSeparator(), item.getValue())
         );
 
         // test combobox
