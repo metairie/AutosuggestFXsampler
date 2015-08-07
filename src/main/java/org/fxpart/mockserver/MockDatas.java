@@ -41,6 +41,20 @@ public class MockDatas {
         return sb.toString();
     }
 
+    public List<LocationBean> loadLocationBeans() {
+        // data for Location
+        LocationBean lb1 = new LocationBean("LO1", "Point of View");
+        LocationBean lb2 = new LocationBean("LO2", "Poland");
+        LocationBean lb3 = new LocationBean("LO3", "Forest");
+        LocationBean lb4 = new LocationBean("LO4", "Office");
+        LocationBean lb5 = new LocationBean("LO5", "Swimming pool");
+        LocationBean lb6 = new LocationBean("LO6", "Tribune");
+        LocationBean lb7 = new LocationBean("LO7", "Office");
+        LocationBean lb8 = new LocationBean("LO8", "Garden");
+        LocationBean lb9 = new LocationBean("LO9", "");
+        return Arrays.asList(lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8, lb9);
+    }
+
     public List<KeyValueString> loadLocation() {
         // data for Location
         KeyValueString lb1 = new KeyValueStringImpl("LO1", "Point of View");

@@ -19,6 +19,11 @@ public class LocationBean {
         name = sname;
     }
 
+    public LocationBean(String k, String v) {
+        this.code = k;
+        this.name = v;
+    }
+
     public long getId() {
         return id;
     }
