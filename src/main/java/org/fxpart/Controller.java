@@ -31,9 +31,12 @@ public class Controller implements Initializable {
         autosuggest.setAcceptFreeTextValue(true);
         autosuggest.setLazyMode(false); // if no item is selected, lazy is useless
         autosuggest.setDelay(300);
-        autosuggest.init(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
+        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(),
+                item -> String.format("%s", item.getValue()),
+                item -> String.format("%s x %s", item.getKey(), item.getValue())
+        );
 
-        // test Converter
+        // test combobox
         cb.setEditable(true);
         List<LocationBean> list = new MockDatas().loadLocationBeans();
         cb.getItems().addAll(list);
@@ -56,24 +59,13 @@ public class Controller implements Initializable {
                 super.updateItem(item, empty);
                 if (empty) {
                     setText("fsfsd");
-                    LOG.debug("button cell factory : empty" );
+                    LOG.debug("button cell factory : empty");
                 } else {
                     setText(item.getName());
-                    LOG.debug("button cell factory : " + item.getName() );
+                    LOG.debug("button cell factory : " + item.getName());
                 }
             }
         });
-
-        /*cb.setCellFactory(param -> {
-                    final ListCell<LocationBean> cell = new ListCell<LocationBean>() {
-                        @Override
-                        protected void updateItem(LocationBean item, boolean empty) {
-                            super.updateItem(item, empty);
-                        }
-                    };
-                    return cell;
-                }
-        );*/
 
     }
 
