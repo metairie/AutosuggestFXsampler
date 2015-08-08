@@ -27,16 +27,26 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        autosuggest.setIgnoreCase(true);
-        autosuggest.setIsFullSearch(true); // search is applied to key+value
+        autosuggest.setIgnoreCase(false);
+        autosuggest.setIsFullSearch(false); // search is applied to key+value
         autosuggest.setEditable(true);
         autosuggest.setAcceptFreeTextValue(true);
         autosuggest.setLazyMode(false); // if no item is selected, lazy is useless
         autosuggest.setDelay(300);
-        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(),
-                item -> String.format("%s", item.getValue(), item.getKey()),
-                item -> String.format("%s" + autosuggest.getKeyValueSeparator(), item.getValue()) // TODO useless for the moment
-        );
+
+        // overload label formatter
+        /*autosuggest.setupAndStart(o -> new MockDatas().loadLocation(),
+                item -> String.format("%s", item.getValue()),
+                new Function<KeyValueString, String>() {
+                    @Override
+                    public String apply(KeyValueString item) {
+                        return String.format("%s%s%s",  item.getKey(), autosuggest.getKeyValueSeparator(), item.getValue());
+                    }
+                } // TODO useless for the moment
+        );*/
+
+        // let default formatter
+        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
 
         // test combobox
         cb.setEditable(true);
@@ -60,11 +70,8 @@ public class Controller implements Initializable {
             protected void updateItem(LocationBean item, boolean empty) {
                 super.updateItem(item, empty);
                 if (empty) {
-                    setText("fsfsd");
-                    LOG.debug("button cell factory : empty");
                 } else {
                     setText(item.getName());
-                    LOG.debug("button cell factory : " + item.getName());
                 }
             }
         });
