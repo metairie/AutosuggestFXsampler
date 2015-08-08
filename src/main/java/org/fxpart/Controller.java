@@ -27,6 +27,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        autosuggest.setIgnoreCase(true);
         autosuggest.setIsFullSearch(true); // search is applied to key+value
         autosuggest.setEditable(true);
         autosuggest.setAcceptFreeTextValue(true);
