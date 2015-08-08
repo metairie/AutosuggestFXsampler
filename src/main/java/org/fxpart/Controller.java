@@ -27,6 +27,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        autosuggest.setIsFullSearch(true);
         autosuggest.setEditable(true);
         autosuggest.setAcceptFreeTextValue(true);
         autosuggest.setLazyMode(false); // if no item is selected, lazy is useless
