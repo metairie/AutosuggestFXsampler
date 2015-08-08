@@ -3,7 +3,6 @@ package org.fxpart.mockserver;
 import javafx.collections.FXCollections;
 import org.fxpart.combobox.KeyValueString;
 import org.fxpart.combobox.KeyValueStringImpl;
-import org.fxpart.combobox.KeyValueStringLabel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -88,18 +87,6 @@ public class MockDatas {
     // ----------
     // PROFESSION
     // ----------
-    public static List<KeyValueStringLabel> loadProfession() {
-        // data for Profession
-        KeyValueString pb1 = new KeyValueStringImpl("PR1", "Photographer");
-        KeyValueString pb2 = new KeyValueStringImpl("PR2", "Politic");
-        KeyValueString pb3 = new KeyValueStringImpl("PR3", "Poet");
-        KeyValueString pb4 = new KeyValueStringImpl("PR4", "Podiatrist");
-        KeyValueString pb5 = new KeyValueStringImpl("PR5", "Swimmer");
-        KeyValueString pb6 = new KeyValueStringImpl("PR6", "Spokesman");
-        KeyValueString pb7 = new KeyValueStringImpl("PR7", "Developer");
-        KeyValueString pb8 = new KeyValueStringImpl("PR8", "Gardener");
-        return Arrays.asList(pb1, pb2, pb3, pb4, pb5, pb6, pb7, pb8);
-    }
 
     public static String loadProfessionJson() {
         // data for Profession
