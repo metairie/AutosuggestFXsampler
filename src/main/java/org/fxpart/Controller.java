@@ -27,25 +27,22 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        autosuggest.setIgnoreCase(false);
-        autosuggest.setIsFullSearch(false); // search is applied to key+value
+        autosuggest.setIgnoreCase(true);
+        autosuggest.setIsFullSearch(true); // search is applied to key+value
         autosuggest.setEditable(true);
         autosuggest.setAcceptFreeTextValue(true);
         autosuggest.setLazyMode(false); // if no item is selected, lazy is useless
         autosuggest.setDelay(300);
 
-        // overload label formatter
-        /*autosuggest.setupAndStart(o -> new MockDatas().loadLocation(),
-                item -> String.format("%s", item.getValue()),
-                new Function<KeyValueString, String>() {
-                    @Override
-                    public String apply(KeyValueString item) {
-                        return String.format("%s%s%s",  item.getKey(), autosuggest.getKeyValueSeparator(), item.getValue());
-                    }
-                } // TODO useless for the moment
-        );*/
+        // override default Graphical Item Formatter
+        //autosuggest.setupAndStart(o -> new MockDatas().loadLocation(),
+        //        item -> String.format("%s", item.getValue()),
+        //        item -> String.format("%s%s%s", item.getKey(), autosuggest.getKeyValueSeparator(), item.getValue()));
 
-        // let default formatter
+        // override default Graphical Item Formatter
+        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
+
+        // override default Graphical Item Formatter
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
 
         // test combobox
