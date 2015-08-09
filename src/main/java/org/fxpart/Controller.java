@@ -1,9 +1,11 @@
 package org.fxpart;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;
+import javafx.scene.text.Text;
 import javafx.util.StringConverter;
 import org.fxpart.combobox.AutosuggestComboBoxList;
 import org.fxpart.combobox.KeyValueString;
@@ -25,8 +27,12 @@ public class Controller implements Initializable {
     @FXML
     ComboBox<LocationBean> cb;
 
+    @FXML
+    Text txt1;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         autosuggest.setIgnoreCase(true);
         autosuggest.setIsFullSearch(true); // search is applied to key+value
         autosuggest.setEditable(true);
@@ -80,4 +86,7 @@ public class Controller implements Initializable {
         autosuggest.stopSearch();
     }
 
+    public void click(ActionEvent actionEvent) {
+        txt1.textProperty().bind(autosuggest.getSkinControl().getCombo().getEditor().textProperty());
+    }
 }
