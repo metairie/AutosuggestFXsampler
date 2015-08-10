@@ -46,7 +46,9 @@ public class Controller implements Initializable {
         //        item -> String.format("%s%s%s", item.getKey(), autosuggest.getKeyValueSeparator(), item.getValue()));
 
         // default Graphical Item Formatter
-        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
+        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(),
+                item -> String.format("%s", item.getValue()),
+                item -> String.format("%s%s%s", item.getKey(), "-", item.getValue()));
 
         // override default Graphical Item Formatter
 //        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
