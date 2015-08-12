@@ -15,12 +15,12 @@ public class Main extends Application {
     private final static Logger LOG = LoggerFactory.getLogger(Main.class);
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
         LOG.info("Fx loading");
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        stage.setTitle("AutosuggestFxTest");
 
-        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent e) {
                 Platform.exit();
@@ -29,8 +29,8 @@ public class Main extends Application {
         });
 
         Scene scene = new Scene(root, 800, 600);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {
