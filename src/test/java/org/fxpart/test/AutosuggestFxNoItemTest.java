@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import org.fxpart.combobox.AutosuggestComboBoxList;
+import org.fxpart.combobox.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
 import org.hamcrest.MatcherAssert;
@@ -22,14 +23,14 @@ import java.util.List;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
-public class AutosuggestFxTest extends ApplicationTest {
-    private final static Logger LOG = LoggerFactory.getLogger(AutosuggestFxTest.class);
+public class AutosuggestFxNoItemTest extends ApplicationTest {
+    private final static Logger LOG = LoggerFactory.getLogger(AutosuggestFxNoItemTest.class);
     private static int delay = 500;
 
     @Override
     public void start(Stage stage) throws IOException {
         LOG.info("Fx loading");
-        Parent root = FXMLLoader.load(AutosuggestFxTest.class.getClass().getResource("/org/fxpart/sample.fxml"));
+        Parent root = FXMLLoader.load(AutosuggestFxNoItemTest.class.getClass().getResource("/org/fxpart/testWithNoItem.fxml"));
         stage.setTitle("AutosuggestFxTest");
 
         stage.setOnCloseRequest(e -> {
@@ -112,6 +113,5 @@ public class AutosuggestFxTest extends ApplicationTest {
         // verify it's Point of view
         MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(list.get(5).getName()));
     }
-
 
 }
