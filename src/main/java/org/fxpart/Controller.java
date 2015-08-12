@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -20,16 +21,17 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        // set up
-        autosuggest.setIgnoreCase(true);
-        autosuggest.setIsFullSearch(true); // search is applied to key+value
-        autosuggest.setEditable(true);
-        autosuggest.setAcceptFreeTextValue(true);
-        autosuggest.setLazyMode(false); // if no item is selected, lazy is useless
-        autosuggest.setDelay(300);
+        // data
+        List<KeyValueString> list = new MockDatas().loadLocation();
+
+        // choose an item, the first
+        KeyValueString kv = list.get(0);
+
+        // set up autosuggest in mode "data live"
+        autosuggest.setLiveDataMode();
 
         // default Graphical Item Formatter
-        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
+        autosuggest.setupAndStart(o -> list, item -> String.format("%s", item.getValue()), null);
     }
 
     @Override
