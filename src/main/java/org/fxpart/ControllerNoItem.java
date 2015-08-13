@@ -25,8 +25,6 @@ public class ControllerNoItem implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        autosuggest.setLiveDataMode();
-        autosuggest.setAcceptFreeTextValue(false);
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         refresh();
     }

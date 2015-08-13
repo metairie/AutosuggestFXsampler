@@ -13,7 +13,7 @@
     <Label styleClass="table-view" text="Autosuggest: get location" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     <AutosuggestComboBoxList fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="300"
-                             minWidth="300"/>
+                             minWidth="300" acceptFreeTextValue="true"/>
 
     <Label styleClass="table-view" text="lazyMode" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
     <Label styleClass="table-view" text="acceptFreeTextValue" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
