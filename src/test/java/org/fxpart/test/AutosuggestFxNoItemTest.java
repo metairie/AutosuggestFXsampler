@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import org.fxpart.combobox.AutosuggestComboBoxList;
-import org.fxpart.combobox.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
 import org.hamcrest.MatcherAssert;

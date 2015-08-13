@@ -66,9 +66,13 @@ public class AutosuggestFxWithItemTest extends ApplicationTest {
         // verify it's Tribune
         KeyValueString kv = new KeyValueStringImpl(list.get(5).getCode(), list.get(5).getName());
         Platform.runLater(() -> autosuggest.itemProperty().setValue(kv));
-        clickOn("#autosuggest");
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(list.get(5).getName()));
+        // verify it's null
+        Platform.runLater(() -> autosuggest.itemProperty().setValue(null));
+        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
+        MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.isEmptyOrNullString());
+
     }
 
 }

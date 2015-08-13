@@ -3,6 +3,7 @@ package org.fxpart;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import org.fxpart.combobox.AutosuggestComboBoxList;
 import org.fxpart.combobox.KeyValueString;
 import org.fxpart.mockserver.MockDatas;
@@ -19,13 +20,17 @@ public class ControllerWithItem implements Initializable {
     @FXML
     AutosuggestComboBoxList<KeyValueString> autosuggest;
 
+    @FXML
+    Label llazyMode, lacceptFreeTextValue, lvisibleRowsCount, leditable, lisFullSearch, lignoreCase;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         List<KeyValueString> list = new MockDatas().loadLocation();
         KeyValueString kv = list.get(0);
-        autosuggest.setLiveDataMode();
+        autosuggest.setCacheDataMode();
         autosuggest.itemProperty().setValue(kv);
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
+        refresh();
     }
 
     @Override
@@ -34,13 +39,23 @@ public class ControllerWithItem implements Initializable {
         autosuggest.stopSearch();
     }
 
-    public void go2(ActionEvent actionEvent) {
+    // clear
+    public void clear(ActionEvent actionEvent) {
         autosuggest.itemProperty().setValue(null);
     }
 
-    public void go(ActionEvent actionEvent) {
+    public void change(ActionEvent actionEvent) {
         List<KeyValueString> list = new MockDatas().loadLocation();
         KeyValueString kv = list.get(5);
         autosuggest.itemProperty().setValue(kv);
+    }
+
+    private void refresh() {
+        llazyMode.textProperty().setValue(String.valueOf(autosuggest.getLazyMode()));
+        lacceptFreeTextValue.textProperty().setValue(String.valueOf(autosuggest.isAcceptFreeTextValue()));
+        lvisibleRowsCount.textProperty().setValue(String.valueOf(autosuggest.visibleProperty()));
+        leditable.textProperty().setValue(String.valueOf(autosuggest.isEditable()));
+        lisFullSearch.textProperty().setValue(String.valueOf(autosuggest.isFullSearch()));
+        lignoreCase.textProperty().setValue(String.valueOf(autosuggest.isIgnoreCase()));
     }
 }
