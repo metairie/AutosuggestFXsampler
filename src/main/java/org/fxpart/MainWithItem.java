@@ -11,13 +11,13 @@ import javafx.stage.WindowEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Main extends Application {
-    private final static Logger LOG = LoggerFactory.getLogger(Main.class);
+public class MainWithItem extends Application {
+    private final static Logger LOG = LoggerFactory.getLogger(MainWithItem.class);
 
     @Override
     public void start(Stage stage) throws Exception {
         LOG.info("Fx loading");
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("testWithItem.fxml"));
         stage.setTitle("AutosuggestFxTest");
 
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {

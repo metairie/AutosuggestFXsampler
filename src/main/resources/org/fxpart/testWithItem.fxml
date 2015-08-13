@@ -8,7 +8,8 @@
           xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="org.fxpart.ControllerWithItem">
 
-    <Button text="Launch Test" fx:id="go" onAction="#go" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <Button text="Change Item" fx:id="go" onAction="#go" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <Button text="Clear Item" fx:id="go2" onAction="#go2" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
 
     <Label styleClass="table-view" text="Autosuggest: get location" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 

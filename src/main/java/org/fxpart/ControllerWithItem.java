@@ -23,8 +23,8 @@ public class ControllerWithItem implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         List<KeyValueString> list = new MockDatas().loadLocation();
         KeyValueString kv = list.get(0);
-        autosuggest.setItem(kv);
         autosuggest.setLiveDataMode();
+        autosuggest.itemProperty().setValue(kv);
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
     }
 
@@ -34,15 +34,13 @@ public class ControllerWithItem implements Initializable {
         autosuggest.stopSearch();
     }
 
-    // need to init autosuggest by this click
-    public void go(ActionEvent actionEvent) {
-        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
+    public void go2(ActionEvent actionEvent) {
+        autosuggest.itemProperty().setValue(null);
     }
 
-    public void go2(ActionEvent actionEvent) {
+    public void go(ActionEvent actionEvent) {
         List<KeyValueString> list = new MockDatas().loadLocation();
-        KeyValueString kv = list.get(0);
-        autosuggest.setItem(kv);
-        autosuggest.setLiveDataMode();
+        KeyValueString kv = list.get(5);
+        autosuggest.itemProperty().setValue(kv);
     }
 }

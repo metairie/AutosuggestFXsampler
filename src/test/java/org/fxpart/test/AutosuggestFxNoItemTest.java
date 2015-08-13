@@ -30,7 +30,7 @@ public class AutosuggestFxNoItemTest extends ApplicationTest {
     @Override
     public void start(Stage stage) throws IOException {
         LOG.info("Fx loading");
-        Parent root = FXMLLoader.load(AutosuggestFxNoItemTest.class.getClass().getResource("/org/fxpart/testWithNoItem.fxml"));
+        Parent root = FXMLLoader.load(AutosuggestFxNoItemTest.class.getClass().getResource("/org/fxpart/testNoItem.fxml"));
         stage.setTitle("AutosuggestFxTest");
 
         stage.setOnCloseRequest(e -> {
@@ -41,6 +41,7 @@ public class AutosuggestFxNoItemTest extends ApplicationTest {
         Scene scene = new Scene(root, 800, 600);
         stage.setScene(scene);
         stage.show();
+
     }
 
     @Test
