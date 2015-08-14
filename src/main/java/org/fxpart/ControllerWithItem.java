@@ -58,4 +58,5 @@ public class ControllerWithItem implements Initializable {
         lisFullSearch.textProperty().setValue(String.valueOf(autosuggest.isFullSearch()));
         lignoreCase.textProperty().setValue(String.valueOf(autosuggest.isIgnoreCase()));
     }
+
 }

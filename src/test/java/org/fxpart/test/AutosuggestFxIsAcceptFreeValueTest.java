@@ -60,7 +60,7 @@ public class AutosuggestFxIsAcceptFreeValueTest extends ApplicationTest {
         // push enter again to re-switch to combo mode,
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         push(KeyCode.ENTER);
-        // verify it's Point of view
+        // verify it's word input
         MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is("qwertz"));
     }
 
