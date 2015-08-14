@@ -1,11 +1,18 @@
 package org.fxpart;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.util.StringConverter;
 import org.fxpart.combobox.AutosuggestComboBoxList;
 import org.fxpart.combobox.KeyValueString;
+import org.fxpart.combobox.KeyValueStringImpl;
 import org.fxpart.mockserver.MockDatas;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,16 +28,47 @@ public class ControllerWithItem implements Initializable {
     AutosuggestComboBoxList<KeyValueString> autosuggest;
 
     @FXML
-    Label llazyMode, lacceptFreeTextValue, lvisibleRowsCount, leditable, lisFullSearch, lignoreCase;
+    Label lvisibleRowsCount;
+
+    @FXML
+    CheckBox llazyMode, lacceptFreeTextValue, leditable, lisFullSearch, lignoreCase;
+
+    @FXML
+    TextField itemOfAs;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // don't change this
         List<KeyValueString> list = new MockDatas().loadLocation();
         KeyValueString kv = list.get(0);
-        autosuggest.setCacheDataMode();
         autosuggest.itemProperty().setValue(kv);
+        autosuggest.setCacheDataMode();
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         refresh();
+
+        // TODO to be removed
+        // try javafx properties binding
+       /* int INDEX = 3;
+        KeyValueString kvbean = new KeyValueStringImpl(list.get(INDEX).getKey(), list.get(INDEX).getValue());
+        // add property with this bean as value
+        ObjectProperty<KeyValueString> locationBeanObjectProperty = new SimpleObjectProperty<>(kvbean);
+        autosuggest.itemProperty().bindBidirectional(locationBeanObjectProperty);*/
+        // END
+
+        /*StringConverter<KeyValueString> converter = new StringConverter<KeyValueString>() {
+            @Override
+            public String toString(KeyValueString object) {
+                return (object == null ? "" : object.getValue());
+            }
+
+            @Override
+            public KeyValueString fromString(String string) {
+                return new KeyValueStringImpl(null, string);
+            }
+        };
+
+        Bindings.bindBidirectional(itemOfAs.textProperty(), autosuggest.itemProperty(), converter);*/
+
     }
 
     @Override
@@ -51,12 +89,12 @@ public class ControllerWithItem implements Initializable {
     }
 
     private void refresh() {
-        llazyMode.textProperty().setValue(String.valueOf(autosuggest.getLazyMode()));
-        lacceptFreeTextValue.textProperty().setValue(String.valueOf(autosuggest.isAcceptFreeTextValue()));
+        llazyMode.selectedProperty().setValue(autosuggest.isLazyMode());
+        lacceptFreeTextValue.selectedProperty().setValue(autosuggest.isAcceptFreeTextValue());
         lvisibleRowsCount.textProperty().setValue(String.valueOf(autosuggest.visibleProperty()));
-        leditable.textProperty().setValue(String.valueOf(autosuggest.isEditable()));
-        lisFullSearch.textProperty().setValue(String.valueOf(autosuggest.isFullSearch()));
-        lignoreCase.textProperty().setValue(String.valueOf(autosuggest.isIgnoreCase()));
+        leditable.selectedProperty().setValue(autosuggest.isEditable());
+        lisFullSearch.selectedProperty().setValue(autosuggest.isFullSearch());
+        lignoreCase.selectedProperty().setValue(autosuggest.isIgnoreCase());
     }
 
 }

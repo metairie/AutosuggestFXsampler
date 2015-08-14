@@ -3,7 +3,9 @@ package org.fxpart;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import org.fxpart.combobox.AutosuggestComboBoxList;
 import org.fxpart.combobox.KeyValueString;
 import org.fxpart.mockserver.MockDatas;
@@ -21,7 +23,13 @@ public class ControllerNoItem implements Initializable {
     AutosuggestComboBoxList<KeyValueString> autosuggest;
 
     @FXML
-    Label llazyMode, lacceptFreeTextValue, lvisibleRowsCount, leditable, lisFullSearch, lignoreCase;
+    Label lvisibleRowsCount;
+
+    @FXML
+    CheckBox llazyMode, lacceptFreeTextValue, leditable, lisFullSearch, lignoreCase;
+
+    @FXML
+    TextField itemOfAs;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -47,11 +55,11 @@ public class ControllerNoItem implements Initializable {
     }
 
     private void refresh() {
-        llazyMode.textProperty().setValue(String.valueOf(autosuggest.getLazyMode()));
-        lacceptFreeTextValue.textProperty().setValue(String.valueOf(autosuggest.isAcceptFreeTextValue()));
+        llazyMode.selectedProperty().setValue(autosuggest.isLazyMode());
+        lacceptFreeTextValue.selectedProperty().setValue(autosuggest.isAcceptFreeTextValue());
         lvisibleRowsCount.textProperty().setValue(String.valueOf(autosuggest.visibleProperty()));
-        leditable.textProperty().setValue(String.valueOf(autosuggest.isEditable()));
-        lisFullSearch.textProperty().setValue(String.valueOf(autosuggest.isFullSearch()));
-        lignoreCase.textProperty().setValue(String.valueOf(autosuggest.isIgnoreCase()));
+        leditable.selectedProperty().setValue(autosuggest.isEditable());
+        lisFullSearch.selectedProperty().setValue(autosuggest.isFullSearch());
+        lignoreCase.selectedProperty().setValue(autosuggest.isIgnoreCase());
     }
 }
