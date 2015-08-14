@@ -3,14 +3,13 @@ package org.fxpart.mockserver;
 /**
  * Created by metairie on 22-Jun-15.
  */
-public class LocationBean {
+public class LocationBean implements CodeNameBean {
 
     private long id;
     private String code;
     private String name;
 
     public LocationBean() {
-
     }
 
     public LocationBean(long lid, String scode, String sname) {

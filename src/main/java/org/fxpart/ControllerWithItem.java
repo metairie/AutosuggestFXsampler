@@ -1,18 +1,14 @@
 package org.fxpart;
 
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.util.StringConverter;
 import org.fxpart.combobox.AutosuggestComboBoxList;
 import org.fxpart.combobox.KeyValueString;
-import org.fxpart.combobox.KeyValueStringImpl;
+import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +21,7 @@ public class ControllerWithItem implements Initializable {
     private final static Logger LOG = LoggerFactory.getLogger(ControllerWithItem.class);
 
     @FXML
-    AutosuggestComboBoxList<KeyValueString> autosuggest;
+    AutosuggestComboBoxList<LocationBean, KeyValueString> autosuggest;
 
     @FXML
     Label lvisibleRowsCount;
@@ -45,30 +41,6 @@ public class ControllerWithItem implements Initializable {
         autosuggest.setCacheDataMode();
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         refresh();
-
-        // TODO to be removed
-        // try javafx properties binding
-       /* int INDEX = 3;
-        KeyValueString kvbean = new KeyValueStringImpl(list.get(INDEX).getKey(), list.get(INDEX).getValue());
-        // add property with this bean as value
-        ObjectProperty<KeyValueString> locationBeanObjectProperty = new SimpleObjectProperty<>(kvbean);
-        autosuggest.itemProperty().bindBidirectional(locationBeanObjectProperty);*/
-        // END
-
-        /*StringConverter<KeyValueString> converter = new StringConverter<KeyValueString>() {
-            @Override
-            public String toString(KeyValueString object) {
-                return (object == null ? "" : object.getValue());
-            }
-
-            @Override
-            public KeyValueString fromString(String string) {
-                return new KeyValueStringImpl(null, string);
-            }
-        };
-
-        Bindings.bindBidirectional(itemOfAs.textProperty(), autosuggest.itemProperty(), converter);*/
-
     }
 
     @Override
