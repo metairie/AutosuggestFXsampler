@@ -28,7 +28,7 @@ public class MainNoItem extends Application {
             }
         });
 
-        Scene scene = new Scene(root, 1280, 800);
+        Scene scene = new Scene(root, 1200, 700);
         stage.setScene(scene);
         stage.show();
     }
