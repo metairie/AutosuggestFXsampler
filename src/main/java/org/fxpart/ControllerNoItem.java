@@ -1,8 +1,6 @@
 package org.fxpart;
 
-import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,7 +20,6 @@ import org.slf4j.LoggerFactory;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.function.Function;
 
 public class ControllerNoItem implements Initializable {
     private final static Logger LOG = LoggerFactory.getLogger(ControllerNoItem.class);
@@ -35,9 +32,6 @@ public class ControllerNoItem implements Initializable {
 
     @FXML
     CheckBox llazyMode, lacceptFreeTextValue, leditable, lisFullSearch, lignoreCase;
-
-    @FXML
-    TextField itemOfAs;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -60,7 +54,7 @@ public class ControllerNoItem implements Initializable {
         // set autosuggest manually
         // no link between Location Bean and KeyValue bean
         // [X] it works
-         autosuggest.itemProperty().setValue(kvbean);
+        //autosuggest.itemProperty().setValue(kvbean);
 
         // --- 2 ---
         // mapping between Observable which contains B to T : developer responsability
@@ -94,6 +88,10 @@ public class ControllerNoItem implements Initializable {
     }
 
     public void change(ActionEvent actionEvent) {
+        if (autosuggest.getSkinControl().getCombo().valueProperty().getValue() != null){
+            System.out.println(" - combo value property " + autosuggest.getSkinControl().getCombo().valueProperty().getValue().getValue());
+        }
+
         if (autosuggest.getItem() != null) {
             System.out.println(" - T item " + autosuggest.getItem().getValue());
         }

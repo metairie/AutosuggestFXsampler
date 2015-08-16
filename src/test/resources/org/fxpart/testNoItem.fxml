@@ -13,9 +13,7 @@
     <Label styleClass="table-view" text="Autosuggest: get location" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     <AutosuggestComboBoxList fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="300"
-                             minWidth="300" acceptFreeTextValue="false"/>
-    <TextField fx:id="itemOfAs" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="300"
-               minWidth="300"/>
+                             minWidth="300" acceptFreeTextValue="true"/>
 
     <CheckBox styleClass="table-view" fx:id="llazyMode" text="lazyMode" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
     <CheckBox styleClass="table-view" fx:id="lacceptFreeTextValue" text="acceptFreeTextValue" GridPane.columnIndex="3" GridPane.rowIndex="2"/>

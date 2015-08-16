@@ -48,19 +48,14 @@ public class AutosuggestFxIsAcceptFreeValueTest extends ApplicationTest {
         AutosuggestComboBoxList autosuggest = lookup("#autosuggest").queryFirst();
         clickOn("#autosuggest");
         List<LocationBean> list = new MockDatas().loadLocationBeans();
-        // and type "Po",
         write("qwertz");
-        // select first entry "Point of View",
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         push(KeyCode.DOWN);
         push(KeyCode.ENTER);
-        // push enter which switch in Button mode the component,
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         push(KeyCode.ENTER);
-        // push enter again to re-switch to combo mode,
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         push(KeyCode.ENTER);
-        // verify it's word input
         MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is("qwertz"));
     }
 
