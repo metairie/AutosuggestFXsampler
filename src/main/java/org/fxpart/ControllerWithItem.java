@@ -72,7 +72,6 @@ public class ControllerWithItem implements Initializable {
                 ObjectProperty op = (ObjectProperty) observable;
                 LocationBean lb = (LocationBean) op.getValue();
                 KeyValue kv = new KeyValueStringImpl(lb.getCode(), lb.getName());
-                LOG.debug(" B2T mapping returns : " + kv.getKey() + " - " + kv.getValue());
                 return new KeyValueStringImpl(lb.getCode(), lb.getName());
             }
         });
@@ -83,7 +82,6 @@ public class ControllerWithItem implements Initializable {
                 ObjectProperty op = (ObjectProperty) observable;
                 KeyValue kv = (KeyValue) op.getValue();
                 LocationBean lb = new LocationBean(String.valueOf(kv.getKey()), String.valueOf(kv.getValue()));
-                LOG.debug(" T2B mapping returns : " + lb.getCode() + " - " + lb.getName());
                 return lb;
             }
         });
@@ -91,7 +89,7 @@ public class ControllerWithItem implements Initializable {
         // TODO END of temporary code - to be removed
 
         // don't change this
-        autosuggest.setCacheDataMode();
+        autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         refresh();
         // works well

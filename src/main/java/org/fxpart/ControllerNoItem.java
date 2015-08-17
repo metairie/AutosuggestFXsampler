@@ -1,7 +1,6 @@
 package org.fxpart;
 
 import javafx.beans.Observable;
-import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
@@ -44,32 +43,10 @@ public class ControllerNoItem implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // don't change this
-        autosuggest.setCacheDataMode();
+        autosuggest.setSearchEngineMode();
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         refresh();
         // works well
-        autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
-            @Override
-            public KeyValueString apply(Observable observable) {
-                ObjectProperty op = (ObjectProperty) observable;
-                LocationBean lb = (LocationBean) op.getValue();
-                KeyValue kv = new KeyValueStringImpl(lb.getCode(), lb.getName());
-                LOG.debug(" B2T mapping returns : " + kv.getKey() + " - " + kv.getValue());
-                return new KeyValueStringImpl(lb.getCode(), lb.getName());
-            }
-        });
-        // and setting a mapping T -> B
-        autosuggest.setItemToBeamMapping(new Function<Observable, LocationBean>() {
-            @Override
-            public LocationBean apply(Observable observable) {
-                ObjectProperty op = (ObjectProperty) observable;
-                KeyValue kv = (KeyValue) op.getValue();
-                LocationBean lb = new LocationBean(String.valueOf(kv.getKey()), String.valueOf(kv.getValue()));
-                LOG.debug(" T2B mapping returns : " + lb.getCode() + " - " + lb.getName());
-                return lb;
-            }
-        });
-        Bindings.bindBidirectional(autosuggest.beanProperty(), myBeanProperty);
     }
 
     @Override
@@ -80,17 +57,14 @@ public class ControllerNoItem implements Initializable {
 
     // clear
     public void clear(ActionEvent actionEvent) {
-//        autosuggest.itemProperty().setValue(null);
+        autosuggest.itemProperty().setValue(null);
         refresh();
     }
 
     // change property
     public void change(ActionEvent actionEvent) {
-        LocationBean lb = new LocationBean();
-        lb.setCode(list.get(3).getCode());
-        lb.setName(list.get(3).getName());
-        myBeanProperty.setValue(lb);
-        //autosuggest.beanProperty().setValue(lb);
+        KeyValueStringImpl lb = new KeyValueStringImpl(list.get(3).getCode(), list.get(3).getName());
+        autosuggest.itemProperty().setValue(lb);
     }
 
     // change KV
@@ -103,10 +77,6 @@ public class ControllerNoItem implements Initializable {
 
     public void debug(ActionEvent actionEvent) {
         autosuggest.getSkinControl().debug("from FXML click ");
-        LOG.debug(" myBean getName               : " + myBeanProperty.getValue().getName());
-        LOG.debug(" control bean getName         : " + autosuggest.beanProperty().getValue().getName());
-        LOG.debug(" control item getValue        : " + autosuggest.itemProperty().getValue().getValue());
-        LOG.debug(" combo value getValue : " + autosuggest.getSkinControl().getCombo().valueProperty().getValue().getValue());
         refresh();
     }
 
