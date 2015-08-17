@@ -8,8 +8,8 @@
           fx:controller="org.fxpart.ControllerNoItem">
 
     <Button text="Change Item" fx:id="change" onAction="#change" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-    <Button text="Clear Item" fx:id="clear" onAction="#clear" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-
+    <Button text="Clear Item" fx:id="clear" onAction="#clear" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+    <Button text="Debug" fx:id="debug" onAction="#debug" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
     <Label styleClass="table-view" text="Autosuggest: get location" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     <AutosuggestComboBoxList fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="300"

@@ -21,6 +21,8 @@ import java.util.ResourceBundle;
 
 public class ControllerNoItem implements Initializable {
     private final static Logger LOG = LoggerFactory.getLogger(ControllerNoItem.class);
+    private SimpleObjectProperty<LocationBean> myBeanProperty = new SimpleObjectProperty<>(null);
+    private List<LocationBean> list = new MockDatas().loadLocationBeans();
 
     @FXML
     AutosuggestComboBoxList<LocationBean, KeyValue> autosuggest;
@@ -35,40 +37,6 @@ public class ControllerNoItem implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         refresh();
-
-        // TODO temporary code - to be removed
-        // try javafx properties binding
-        int INDEX = 2; // "LO3 Forest"
-        List<LocationBean> list = new MockDatas().loadLocationBeans();
-
-        // Location bean and property
-        LocationBean lb = list.get(INDEX);
-        SimpleObjectProperty<LocationBean> myBeanProperty = new SimpleObjectProperty<>(lb);
-
-        // KeyValue bean and property
-        KeyValueString kvbean = new KeyValueStringImpl(lb.getCode(), lb.getName());
-
-        // --- 1 ---
-        // set autosuggest manually
-        // no link between Location Bean and KeyValue bean
-        // [X] it works
-        //autosuggest.itemProperty().setValue(kvbean);
-
-        // --- 2 ---
-        // mapping between Observable which contains B to T : developer responsability
-        /*autosuggest.setBeanToItemMapping(new Function<Observable, KeyValue>() {
-            @Override
-            public KeyValue apply(Observable o) {
-                ObjectProperty op = (ObjectProperty) o;
-                LocationBean lb = (LocationBean) op.getValue();
-                return new KeyValueStringImpl(lb.getCode(), lb.getName());
-            }
-        });
-        Bindings.bindBidirectional(autosuggest.beanProperty(), myBeanProperty);*/
-
-        System.out.println(" end controller ");
-        // TODO END of temporary
-
     }
 
     @Override
@@ -79,15 +47,14 @@ public class ControllerNoItem implements Initializable {
 
     // clear
     public void clear(ActionEvent actionEvent) {
-//        autosuggest.itemProperty().setValue(null);
-        autosuggest.getSkinControl().debug("from FXML click ");
+        autosuggest.itemProperty().setValue(null);
+        refresh();
     }
 
-    // change item
     public void change(ActionEvent actionEvent) {
-        List<KeyValueString> list = new MockDatas().loadLocation();
-        KeyValueString kv = list.get(5);
+        KeyValue kv = (KeyValue) list.get(5);
         autosuggest.itemProperty().setValue(kv);
+        refresh();
     }
 
     private void refresh() {
@@ -97,5 +64,10 @@ public class ControllerNoItem implements Initializable {
         leditable.selectedProperty().setValue(autosuggest.isEditable());
         lisFullSearch.selectedProperty().setValue(autosuggest.isFullSearch());
         lignoreCase.selectedProperty().setValue(autosuggest.isIgnoreCase());
+    }
+
+    public void debug(ActionEvent actionEvent) {
+        autosuggest.getSkinControl().debug("from FXML click ");
+        refresh();
     }
 }
