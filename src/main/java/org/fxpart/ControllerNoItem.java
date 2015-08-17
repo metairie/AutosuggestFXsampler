@@ -1,13 +1,11 @@
 package org.fxpart;
 
-import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import org.fxpart.combobox.AutosuggestComboBoxList;
 import org.fxpart.combobox.KeyValue;
 import org.fxpart.combobox.KeyValueString;
@@ -81,23 +79,15 @@ public class ControllerNoItem implements Initializable {
 
     // clear
     public void clear(ActionEvent actionEvent) {
-        //autosuggest.itemProperty().setValue(null);
-        if (autosuggest.getBean() != null) {
-            System.out.println(" - B bean " + autosuggest.getBean().getName());
-        }
+//        autosuggest.itemProperty().setValue(null);
+        autosuggest.getSkinControl().debug("from FXML click ");
     }
 
+    // change item
     public void change(ActionEvent actionEvent) {
-        if (autosuggest.getSkinControl().getCombo().valueProperty().getValue() != null){
-            System.out.println(" - combo value property " + autosuggest.getSkinControl().getCombo().valueProperty().getValue().getValue());
-        }
-
-        if (autosuggest.getItem() != null) {
-            System.out.println(" - T item " + autosuggest.getItem().getValue());
-        }
-//        List<KeyValueString> list = new MockDatas().loadLocation();
-//        KeyValueString kv = list.get(5);
-//        autosuggest.itemProperty().setValue(kv);
+        List<KeyValueString> list = new MockDatas().loadLocation();
+        KeyValueString kv = list.get(5);
+        autosuggest.itemProperty().setValue(kv);
     }
 
     private void refresh() {

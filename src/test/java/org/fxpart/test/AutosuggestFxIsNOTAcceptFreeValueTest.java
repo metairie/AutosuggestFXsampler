@@ -7,8 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import org.fxpart.combobox.AutosuggestComboBoxList;
-import org.fxpart.mockserver.LocationBean;
-import org.fxpart.mockserver.MockDatas;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -18,18 +16,17 @@ import org.testfx.framework.junit.ApplicationTest;
 import org.testfx.util.WaitForAsyncUtils;
 
 import java.io.IOException;
-import java.util.List;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
-public class AutosuggestFxIsAcceptFreeValueTest extends ApplicationTest {
-    private final static Logger LOG = LoggerFactory.getLogger(AutosuggestFxIsAcceptFreeValueTest.class);
+public class AutosuggestFxIsNOTAcceptFreeValueTest extends ApplicationTest {
+    private final static Logger LOG = LoggerFactory.getLogger(AutosuggestFxIsNOTAcceptFreeValueTest.class);
     private static int delay = 500;
 
     @Override
     public void start(Stage stage) throws IOException {
         LOG.info("Fx loading");
-        Parent root = FXMLLoader.load(AutosuggestFxIsAcceptFreeValueTest.class.getClass().getResource("/org/fxpart/testNoItem.fxml"));
+        Parent root = FXMLLoader.load(AutosuggestFxIsNOTAcceptFreeValueTest.class.getClass().getResource("/org/fxpart/testWithItem.fxml"));
         stage.setTitle("AutosuggestFxTest");
 
         stage.setOnCloseRequest(e -> {
@@ -47,13 +44,17 @@ public class AutosuggestFxIsAcceptFreeValueTest extends ApplicationTest {
         // select Autosuggest
         AutosuggestComboBoxList autosuggest = lookup("#autosuggest").queryFirst();
         clickOn("#autosuggest");
-        List<LocationBean> list = new MockDatas().loadLocationBeans();
-        write("qwertz");
+        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
+        push(KeyCode.ENTER);
+        push(KeyCode.END);
+        push(KeyCode.CONTROL, KeyCode.A);
+        push(KeyCode.DELETE);
+        write("");
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         push(KeyCode.ENTER);
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         push(KeyCode.ENTER);
-        MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is("qwertz"));
+        MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(""));
     }
 
 }

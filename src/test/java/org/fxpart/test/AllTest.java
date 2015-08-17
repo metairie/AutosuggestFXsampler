@@ -12,6 +12,7 @@ import org.junit.runners.Suite;
         AutosuggestFxIsAcceptFreeValueTest.class
         , AutosuggestFxNoItemTest.class
         , AutosuggestFxWithItemTest.class
+        , AutosuggestFxIsNOTAcceptFreeValueTest.class
 })
 public class AllTest {
     @After

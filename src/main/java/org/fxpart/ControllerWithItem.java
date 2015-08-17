@@ -41,9 +41,7 @@ public class ControllerWithItem implements Initializable {
         autosuggest.setCacheDataMode();
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         refresh();
-
         // works well
-        
     }
 
     @Override
@@ -54,7 +52,8 @@ public class ControllerWithItem implements Initializable {
 
     // clear
     public void clear(ActionEvent actionEvent) {
-        autosuggest.itemProperty().setValue(null);
+        //autosuggest.itemProperty().setValue(null);
+        autosuggest.getSkinControl().debug("from FXML click ");
     }
 
     public void change(ActionEvent actionEvent) {
