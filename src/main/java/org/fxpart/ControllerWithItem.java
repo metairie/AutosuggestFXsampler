@@ -41,6 +41,9 @@ public class ControllerWithItem implements Initializable {
         autosuggest.setCacheDataMode();
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         refresh();
+
+        // works well
+        
     }
 
     @Override
