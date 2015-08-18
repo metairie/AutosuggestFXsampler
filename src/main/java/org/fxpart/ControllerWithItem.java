@@ -7,9 +7,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import org.fxpart.combobox.AutosuggestComboBoxList;
 import org.fxpart.combobox.KeyValue;
 import org.fxpart.combobox.KeyValueString;
@@ -31,15 +28,6 @@ public class ControllerWithItem implements Initializable {
 
     @FXML
     AutosuggestComboBoxList<LocationBean, KeyValueString> autosuggest;
-
-    @FXML
-    Label lvisibleRowsCount;
-
-    @FXML
-    CheckBox llazyMode, lacceptFreeTextValue, leditable, lisFullSearch, lignoreCase;
-
-    @FXML
-    TextField itemOfAs;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -91,7 +79,6 @@ public class ControllerWithItem implements Initializable {
         // don't change this
         autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
-        refresh();
         // works well
     }
 
@@ -104,7 +91,6 @@ public class ControllerWithItem implements Initializable {
     // clear
     public void clear(ActionEvent actionEvent) {
 //        autosuggest.itemProperty().setValue(null);
-        refresh();
     }
 
     // change property
@@ -121,7 +107,6 @@ public class ControllerWithItem implements Initializable {
         List<KeyValueString> list = new MockDatas().loadLocation();
         KeyValueString kv = list.get(5);
         autosuggest.itemProperty().setValue(kv);
-        refresh();
     }
 
     public void debug(ActionEvent actionEvent) {
@@ -130,15 +115,5 @@ public class ControllerWithItem implements Initializable {
         LOG.debug(" control bean getName         : " + autosuggest.beanProperty().getValue().getName());
         LOG.debug(" control item getValue        : " + autosuggest.itemProperty().getValue().getValue());
         LOG.debug(" combo value getValue : " + autosuggest.getSkinControl().getCombo().valueProperty().getValue().getValue());
-        refresh();
-    }
-
-    private void refresh() {
-        llazyMode.selectedProperty().setValue(autosuggest.isLazyMode());
-        lacceptFreeTextValue.selectedProperty().setValue(autosuggest.isAcceptFreeTextValue());
-        lvisibleRowsCount.textProperty().setValue(String.valueOf(autosuggest.visibleProperty()));
-        leditable.selectedProperty().setValue(autosuggest.isEditable());
-        lisFullSearch.selectedProperty().setValue(autosuggest.isFullSearch());
-        lignoreCase.selectedProperty().setValue(autosuggest.isIgnoreCase());
     }
 }

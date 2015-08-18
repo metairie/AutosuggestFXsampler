@@ -15,19 +15,6 @@
 
     <AutosuggestComboBoxList fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="300"
                              minWidth="300" acceptFreeTextValue="false"/>
-    <TextField fx:id="itemOfAs" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="300"
-               minWidth="300"/>
-
-    <CheckBox styleClass="table-view" fx:id="llazyMode" text="lazyMode" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
-    <CheckBox styleClass="table-view" fx:id="lacceptFreeTextValue" text="acceptFreeTextValue" GridPane.columnIndex="4"
-              GridPane.rowIndex="2"/>
-    <Label styleClass="table-view" fx:id="lvisibleRowsCount" text="visibleRowsCount" GridPane.columnIndex="4"
-           GridPane.rowIndex="3"/>
-    <CheckBox styleClass="table-view" fx:id="leditable" text="editable" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
-    <CheckBox styleClass="table-view" fx:id="lisFullSearch" text="isFullSearch" GridPane.columnIndex="4"
-              GridPane.rowIndex="5"/>
-    <CheckBox styleClass="table-view" fx:id="lignoreCase" text="ignoreCase" GridPane.columnIndex="4"
-              GridPane.rowIndex="6"/>
 
     <columnConstraints>
         <ColumnConstraints maxWidth="10.0" minWidth="10.0" prefWidth="45.0"/>
