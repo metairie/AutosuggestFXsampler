@@ -47,6 +47,26 @@ public class ControllerNoItem implements Initializable {
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         refresh();
         // works well
+
+        autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
+            @Override
+            public KeyValueString apply(Observable observable) {
+                ObjectProperty op = (ObjectProperty) observable;
+                LocationBean lb = (LocationBean) op.getValue();
+                KeyValue kv = new KeyValueStringImpl(lb.getCode(), lb.getName());
+                return new KeyValueStringImpl(lb.getCode(), lb.getName());
+            }
+        });
+        // and setting a mapping T -> B
+        autosuggest.setItemToBeamMapping(new Function<Observable, LocationBean>() {
+            @Override
+            public LocationBean apply(Observable observable) {
+                ObjectProperty op = (ObjectProperty) observable;
+                KeyValue kv = (KeyValue) op.getValue();
+                LocationBean lb = new LocationBean(String.valueOf(kv.getKey()), String.valueOf(kv.getValue()));
+                return lb;
+            }
+        });
     }
 
     @Override
