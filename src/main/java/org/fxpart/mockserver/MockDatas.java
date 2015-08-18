@@ -94,7 +94,7 @@ public class MockDatas {
         sb.append("[");
         sb.append("{ \"id\": 1, \"code\":\"PR1\", \"name\": \"Photographer\" },");
         sb.append("{ \"id\": 2, \"code\":\"PR2\", \"name\": \"Politic\" },");
-        sb.append("{ \"id\": 3, \"code\":\"PR3\", \"name\": \"Poet\" },");
+        sb.append("{ \"id\": 3, \"code\":\"PR3\", \"name\": \"Priest\" },");
         sb.append("{ \"id\": 4, \"code\":\"PR4\", \"name\": \"Podiatrist\" },");
         sb.append("{ \"id\": 5, \"code\":\"PR5\", \"name\": \"Swimmer\" },");
         sb.append("{ \"id\": 6, \"code\":\"PR6\", \"name\": \"Spokesman\" },");
@@ -102,5 +102,18 @@ public class MockDatas {
         sb.append("{ \"id\": 8, \"code\":\"PR8\", \"name\": \"Gardener\" }");
         sb.append("]");
         return sb.toString();
+    }
+
+    public List<KeyValueString> loadProfession() {
+        // data for Location
+        KeyValueString lb1 = new KeyValueStringImpl("PR1", "Photographer 1");
+        KeyValueString lb2 = new KeyValueStringImpl("PR2", "Politic");
+        KeyValueString lb3 = new KeyValueStringImpl("PR3", "Priest");
+        KeyValueString lb4 = new KeyValueStringImpl("PR4", "Podiatrist");
+        KeyValueString lb5 = new KeyValueStringImpl("PR5", "Swimmer");
+        KeyValueString lb6 = new KeyValueStringImpl("PR6", "Spokesman");
+        KeyValueString lb7 = new KeyValueStringImpl("PR7", "Developer 6");
+        KeyValueString lb8 = new KeyValueStringImpl("PR8", "Gardener");
+        return Arrays.asList(lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8);
     }
 }

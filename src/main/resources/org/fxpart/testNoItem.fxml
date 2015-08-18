@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import org.fxpart.combobox.AutosuggestComboBoxList?>
 <GridPane alignment="center" hgap="10" prefHeight="800.0" prefWidth="1280.0" vgap="10"
@@ -8,29 +10,28 @@
           fx:controller="org.fxpart.ControllerNoItem">
 
     <Button text="Change KV" fx:id="change" onAction="#changeKV" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-    <Button text="Change mProp" fx:id="changeP" onAction="#change" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+    <Button text="Change mProp" fx:id="changeP" onAction="#change" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
     <Button text="Clear Item" fx:id="clear" onAction="#clear" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
     <Button text="Debug" fx:id="debug" onAction="#debug" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
-    <Label styleClass="table-view" text="Autosuggest: get location" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label styleClass="table-view" text="noitem+free" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
 
-    <AutosuggestComboBoxList fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="300"
-                             minWidth="300" acceptFreeTextValue="true"/>
-    <TextField fx:id="itemOfAs" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="300"
-               minWidth="300"/>
+<!--    <AutosuggestComboBoxList fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="300"
+                             minWidth="300" acceptFreeTextValue="true"/>-->
 
-    <CheckBox styleClass="table-view" fx:id="llazyMode" text="lazyMode" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
-    <CheckBox styleClass="table-view" fx:id="lacceptFreeTextValue" text="acceptFreeTextValue" GridPane.columnIndex="4"
-              GridPane.rowIndex="2"/>
-    <Label styleClass="table-view" fx:id="lvisibleRowsCount" text="visibleRowsCount" GridPane.columnIndex="4"
-           GridPane.rowIndex="3"/>
-    <CheckBox styleClass="table-view" fx:id="leditable" text="editable" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
-    <CheckBox styleClass="table-view" fx:id="lisFullSearch" text="isFullSearch" GridPane.columnIndex="4"
-              GridPane.rowIndex="5"/>
-    <CheckBox styleClass="table-view" fx:id="lignoreCase" text="ignoreCase" GridPane.columnIndex="4"
-              GridPane.rowIndex="6"/>
+    <Label styleClass="table-view" text="lazy" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <AutosuggestComboBoxList fx:id="autosuggestLazy" prefWidth="300" minWidth="300" acceptFreeTextValue="false"
+                                 lazyMode="true"/>
+        <ImageView fx:id="loadIndicator" disable="false" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true"
+                   visible="false" preserveRatio="true">
+            <image>
+                <Image url="@combobox/gauge.png"/>
+            </image>
+        </ImageView>
+    </HBox>
 
     <columnConstraints>
-        <ColumnConstraints maxWidth="10.0" minWidth="10.0" prefWidth="45.0"/>
+        <ColumnConstraints maxWidth="100.0" minWidth="100.0" prefWidth="1000"/>
         <ColumnConstraints maxWidth="216.0" minWidth="10.0" prefWidth="191.0"/>
         <ColumnConstraints maxWidth="781.0" minWidth="184.0" prefWidth="184.0"/>
         <ColumnConstraints maxWidth="590.0" minWidth="197.0" prefWidth="197.0"/>
