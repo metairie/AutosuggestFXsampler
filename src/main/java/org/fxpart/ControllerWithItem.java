@@ -76,7 +76,7 @@ public class ControllerWithItem implements Initializable {
 
         // don't change this
         autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
-        autosuggest.setVisibleRowsCount(1);
+        autosuggest.setVisibleRowsCount(5);
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         // works well
     }

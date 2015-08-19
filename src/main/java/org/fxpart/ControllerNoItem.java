@@ -79,7 +79,6 @@ public class ControllerNoItem implements Initializable {
     // change property
     public void change(ActionEvent actionEvent) {
         KeyValueStringImpl kv = new KeyValueStringImpl(list.get(3).getCode(), list.get(3).getName());
-        // TODO AUTOSFX-20 PB autosuggest.itemProperty().setValue(kv);
         autosuggest.itemProperty().setValue(kv);
         autosuggest.setEditorText(kv.getValue());
         autosuggest.getSkinControl().getButton().textProperty().setValue(kv.getValue());
