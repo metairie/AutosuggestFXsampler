@@ -76,7 +76,7 @@ public class ControllerWithItem implements Initializable {
 
         // don't change this
         autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
-        autosuggest.setVisibleRowsCount(3);
+        autosuggest.setVisibleRowsCount(1);
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         // works well
     }
@@ -115,9 +115,11 @@ public class ControllerWithItem implements Initializable {
 
     public void debug(ActionEvent actionEvent) {
         autosuggest.getSkinControl().debug("from FXML click ");
-//        LOG.debug(" myBean getName               : " + myBeanProperty.getValue().getName());
-//        LOG.debug(" control bean getName         : " + autosuggest.beanProperty().getValue().getName());
-        LOG.debug(" control item getValue        : " + autosuggest.itemProperty().getValue().getValue());
-        LOG.debug(" combo value getValue : " + autosuggest.getSkinControl().getCombo().valueProperty().getValue().getValue());
+        //LOG.debug(" myBean getName               : " + myBeanProperty.getValue().getName());
+       //LOG.debug(" control bean getName         : " + autosuggest.beanProperty().getValue().getName());
+        LOG.debug(" control num row              : " + autosuggest.getVisibleRowsCount());
+
+//        LOG.debug(" control item getValue        : " + autosuggest.itemProperty().getValue().getValue());
+//        LOG.debug(" combo value getValue : " + autosuggest.getSkinControl().getCombo().valueProperty().getValue().getValue());
     }
 }
