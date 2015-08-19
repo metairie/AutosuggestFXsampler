@@ -6,7 +6,7 @@
     <artifactId>AutosuggestFXsampler</artifactId>
     <groupId>org.fxpart</groupId>
     <packaging>jar</packaging>
-    <version>0.44.9</version>
+    <version>0.44.10-SNAPSHOT</version>
     <name>${project.artifactId}</name>
     <description>${project.artifactId} - project</description>
 
@@ -55,13 +55,6 @@
             <artifactId>mockserver-netty</artifactId>
             <version>${mockserver-netty.version}</version>
         </dependency>
-        <!-- testng
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.9.6</version>
-            <scope>test</scope>
-        </dependency> -->
         <!-- test FX -->
         <dependency>
             <groupId>org.testfx</groupId>
@@ -76,5 +69,17 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    <build>
+        <testResources>
+            <testResource>
+                <directory>${project.basedir}/src/test/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+            <testResource>
+                <directory>${project.basedir}/src/test/resources</directory>
+            </testResource>
+        </testResources>
+    </build>
 </project>
