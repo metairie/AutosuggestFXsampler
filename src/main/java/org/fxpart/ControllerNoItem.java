@@ -41,10 +41,7 @@ public class ControllerNoItem implements Initializable {
         autosuggestLazy.setDelay(500); // for having time to see loadindicator
         autosuggestLazy.setupAndStart(o -> new MockDatas().loadProfession(), item -> String.format("%s", item.getValue()), null);
 //        // don't change this
-
-        //autosuggest.setLiveDataMode();
-        autosuggest.setCacheDataMode();
-        autosuggest.setIgnoreCase(false);
+        
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         /*autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
             @Override

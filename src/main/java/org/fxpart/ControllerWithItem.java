@@ -39,8 +39,8 @@ public class ControllerWithItem implements Initializable {
         // no link between Location Bean and KeyValue bean
         // KeyValue bean and property
         KeyValueString kvbean = new KeyValueStringImpl(lb.getCode(), lb.getName());
-//        autosuggest.itemProperty().setValue(kvbean);
-//        autosuggest.updateBean(autosuggest.itemProperty());
+        autosuggest.itemProperty().setValue(kvbean);
+        autosuggest.updateBean(autosuggest.itemProperty());
 
         // --- 2 ---
 //        myBeanProperty.setValue(lb);
@@ -76,7 +76,7 @@ public class ControllerWithItem implements Initializable {
 
         // don't change this
         autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
-        autosuggest.setVisibleRowsCount(6);
+        autosuggest.setVisibleRowsCount(20);
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         // works well
     }
