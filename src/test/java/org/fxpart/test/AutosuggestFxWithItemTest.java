@@ -55,7 +55,7 @@ public class AutosuggestFxWithItemTest extends ApplicationTest {
         MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(list.get(0).getName()));
     }
 
-    //@Test
+    @Test
     public void scenario_change_item() {
         // select Autosuggest
         AutosuggestComboBoxList autosuggest = lookup("#autosuggest").queryFirst();

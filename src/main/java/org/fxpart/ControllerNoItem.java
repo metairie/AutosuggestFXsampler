@@ -42,9 +42,11 @@ public class ControllerNoItem implements Initializable {
         autosuggestLazy.setupAndStart(o -> new MockDatas().loadProfession(), item -> String.format("%s", item.getValue()), null);
 //        // don't change this
 
-        autosuggest.setSearchEngineMode();
+        //autosuggest.setLiveDataMode();
+        autosuggest.setCacheDataMode();
+        autosuggest.setIgnoreCase(false);
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
-        autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
+        /*autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
             @Override
             public KeyValueString apply(Observable observable) {
                 ObjectProperty op = (ObjectProperty) observable;
@@ -62,7 +64,7 @@ public class ControllerNoItem implements Initializable {
                 LocationBean lb = new LocationBean(String.valueOf(kv.getKey()), String.valueOf(kv.getValue()));
                 return lb;
             }
-        });
+        });*/
     }
 
     @Override
