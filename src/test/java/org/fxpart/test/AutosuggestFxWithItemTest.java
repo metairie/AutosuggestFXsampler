@@ -67,14 +67,12 @@ public class AutosuggestFxWithItemTest extends ApplicationTest {
         KeyValueString kv = new KeyValueStringImpl(list.get(5).getCode(), list.get(5).getName());
         Platform.runLater(() -> {
                     autosuggest.itemProperty().setValue(kv);
-                    autosuggest.updateBean(autosuggest.itemProperty());
                 });
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(list.get(5).getName()));
         // verify it's null
         Platform.runLater(() -> {
             autosuggest.itemProperty().setValue(null);
-            autosuggest.updateBean(null);
         });
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.isEmptyOrNullString());
