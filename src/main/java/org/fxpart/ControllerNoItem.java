@@ -56,7 +56,6 @@ public class ControllerNoItem implements Initializable {
         LOG.debug("change B");
         KeyValueStringImpl kv = new KeyValueStringImpl(list.get(3).getCode(), list.get(3).getName());
         autosuggest.itemProperty().setValue(kv);
-        autosuggest.updateBean(autosuggest.itemProperty());
     }
 
     // change T KV
@@ -65,7 +64,6 @@ public class ControllerNoItem implements Initializable {
         List<KeyValueString> list = new MockDatas().loadLocation();
         KeyValueString kv = list.get(5);
         autosuggest.itemProperty().setValue(kv);
-        autosuggest.updateBean(autosuggest.itemProperty());
     }
 
     public void debug(ActionEvent actionEvent) {

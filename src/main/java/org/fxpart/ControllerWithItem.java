@@ -101,8 +101,6 @@ public class ControllerWithItem implements Initializable {
 
     // clear
     public void clear(ActionEvent actionEvent) {
-//        autosuggest.itemProperty().setValue(null);
-//        autosuggest.updateBean(autosuggest.itemProperty());
         myBeanProperty.setValue(null);
     }
 
@@ -114,8 +112,6 @@ public class ControllerWithItem implements Initializable {
         lb.setCode(list.get(3).getCode());
         lb.setName(list.get(3).getName());
         myBeanProperty.setValue(lb);
-        //       autosuggest.beanProperty().setValue(lb);
-        //       autosuggest.updateBean(autosuggest.itemProperty());
     }
 
     // change KV
@@ -124,7 +120,6 @@ public class ControllerWithItem implements Initializable {
         List<KeyValueString> list = new MockDatas().loadLocation();
         KeyValueString kv = list.get(5);
         autosuggest.itemProperty().setValue(kv);
-        autosuggest.updateBean(autosuggest.itemProperty());
     }
 
     public void debug(ActionEvent actionEvent) {
