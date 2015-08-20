@@ -31,6 +31,12 @@ public class ControllerWithItem implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // don't change this
+        autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
+        autosuggest.setVisibleRowsCount(20);
+        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
+        // works well
+
         // TODO BEGIN of temporary code - to be removed
         // try javafx properties binding
         int INDEX = 0; // INDEX = 0 "LO1 Point of view 1"
@@ -45,7 +51,7 @@ public class ControllerWithItem implements Initializable {
         // KeyValue bean and property
         KeyValueString kvbean = new KeyValueStringImpl(lb.getCode(), lb.getName());
         autosuggest.itemProperty().setValue(kvbean);
-        autosuggest.updateBean(autosuggest.itemProperty());
+//        autosuggest.updateBean(autosuggest.itemProperty());
 
         // --- 2 ---
         myBeanProperty.setValue(lb);
@@ -55,9 +61,13 @@ public class ControllerWithItem implements Initializable {
             @Override
             public KeyValueString apply(Observable observable) {
                 ObjectProperty op = (ObjectProperty) observable;
-                LocationBean lb = (LocationBean) op.getValue();
-                KeyValue kv = new KeyValueStringImpl(lb.getCode(), lb.getName());
-                return new KeyValueStringImpl(lb.getCode(), lb.getName());
+                if (op == null) {
+                    return autosuggest.newInstanceOfT.apply(observable);
+                } else {
+                    LocationBean lb = (LocationBean) op.getValue();
+                    KeyValue kv = new KeyValueStringImpl(lb.getCode(), lb.getName());
+                    return new KeyValueStringImpl(lb.getCode(), lb.getName());
+                }
             }
         });
         // and setting a mapping T -> B
@@ -65,9 +75,13 @@ public class ControllerWithItem implements Initializable {
             @Override
             public LocationBean apply(Observable observable) {
                 ObjectProperty op = (ObjectProperty) observable;
-                KeyValue kv = (KeyValue) op.getValue();
-                LocationBean lb = new LocationBean(String.valueOf(kv.getKey()), String.valueOf(kv.getValue()));
-                return lb;
+                if (op == null) {
+                    return autosuggest.newInstanceOfB.apply(observable);
+                } else {
+                    KeyValue kv = (KeyValue) op.getValue();
+                    LocationBean lb = new LocationBean(String.valueOf(kv.getKey()), String.valueOf(kv.getValue()));
+                    return lb;
+                }
             }
         });
         autosuggest.newInstanceOfB = new Function<Observable, LocationBean>() {
@@ -78,12 +92,6 @@ public class ControllerWithItem implements Initializable {
         };
         Bindings.bindBidirectional(autosuggest.beanProperty(), myBeanProperty);
         // END of temporary code - to be removed
-
-        // don't change this
-        autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
-        autosuggest.setVisibleRowsCount(20);
-        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
-        // works well
     }
 
     @Override
