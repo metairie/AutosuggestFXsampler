@@ -43,7 +43,7 @@ public class ControllerNoItem implements Initializable {
 //        // don't change this
 
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
-        /*autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
+/*        autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
             @Override
             public KeyValueString apply(Observable observable) {
                 ObjectProperty op = (ObjectProperty) observable;
