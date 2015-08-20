@@ -1,14 +1,10 @@
 package org.fxpart;
 
-import javafx.beans.Observable;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.image.ImageView;
 import org.fxpart.combobox.AutosuggestComboBoxList;
-import org.fxpart.combobox.KeyValue;
 import org.fxpart.combobox.KeyValueString;
 import org.fxpart.combobox.KeyValueStringImpl;
 import org.fxpart.mockserver.LocationBean;
@@ -19,7 +15,6 @@ import org.slf4j.LoggerFactory;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.function.Function;
 
 public class ControllerNoItem implements Initializable {
     private final static Logger LOG = LoggerFactory.getLogger(ControllerWithItem.class);
@@ -43,25 +38,6 @@ public class ControllerNoItem implements Initializable {
 //        // don't change this
 
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
-/*        autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
-            @Override
-            public KeyValueString apply(Observable observable) {
-                ObjectProperty op = (ObjectProperty) observable;
-                LocationBean lb = (LocationBean) op.getValue();
-                KeyValue kv = new KeyValueStringImpl(lb.getCode(), lb.getName());
-                return new KeyValueStringImpl(lb.getCode(), lb.getName());
-            }
-        });
-        // and setting a mapping T -> B
-        autosuggest.setItemToBeamMapping(new Function<Observable, LocationBean>() {
-            @Override
-            public LocationBean apply(Observable observable) {
-                ObjectProperty op = (ObjectProperty) observable;
-                KeyValue kv = (KeyValue) op.getValue();
-                LocationBean lb = new LocationBean(String.valueOf(kv.getKey()), String.valueOf(kv.getValue()));
-                return lb;
-            }
-        });*/
     }
 
     @Override

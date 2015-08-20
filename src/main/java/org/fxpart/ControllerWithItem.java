@@ -51,7 +51,6 @@ public class ControllerWithItem implements Initializable {
         // KeyValue bean and property
         KeyValueString kvbean = new KeyValueStringImpl(lb.getCode(), lb.getName());
         autosuggest.itemProperty().setValue(kvbean);
-//        autosuggest.updateBean(autosuggest.itemProperty());
 
         // --- 2 ---
         myBeanProperty.setValue(lb);
