@@ -41,7 +41,7 @@ public class ControllerNoItem implements Initializable {
         autosuggestLazy.setDelay(500); // for having time to see loadindicator
         autosuggestLazy.setupAndStart(o -> new MockDatas().loadProfession(), item -> String.format("%s", item.getValue()), null);
 //        // don't change this
-        
+
         autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
         /*autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
             @Override
@@ -75,19 +75,21 @@ public class ControllerNoItem implements Initializable {
         autosuggest.itemProperty().setValue(null);
     }
 
-    // change property
+    // change B property
     public void change(ActionEvent actionEvent) {
+        LOG.debug("change B");
         KeyValueStringImpl kv = new KeyValueStringImpl(list.get(3).getCode(), list.get(3).getName());
         autosuggest.itemProperty().setValue(kv);
-        autosuggest.setEditorText(kv.getValue());
-        autosuggest.getSkinControl().getButton().textProperty().setValue(kv.getValue());
+        autosuggest.updateBean(autosuggest.itemProperty());
     }
 
-    // change KV
+    // change T KV
     public void changeKV(ActionEvent actionEvent) {
+        LOG.debug("change T");
         List<KeyValueString> list = new MockDatas().loadLocation();
         KeyValueString kv = list.get(5);
         autosuggest.itemProperty().setValue(kv);
+        autosuggest.updateBean(autosuggest.itemProperty());
     }
 
     public void debug(ActionEvent actionEvent) {

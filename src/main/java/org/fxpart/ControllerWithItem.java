@@ -97,16 +97,18 @@ public class ControllerWithItem implements Initializable {
 
     // change B property
     public void changeB(ActionEvent actionEvent) {
+        LOG.debug("change B");
         LocationBean lb = new LocationBean();
         lb.setCode(list.get(3).getCode());
         lb.setName(list.get(3).getName());
 //        myBeanProperty.setValue(lb);
-        //autosuggest.beanProperty().setValue(lb);
-        autosuggest.updateBean(autosuggest.itemProperty());
+ //       autosuggest.beanProperty().setValue(lb);
+ //       autosuggest.updateBean(autosuggest.itemProperty());
     }
 
     // change KV
     public void changeT(ActionEvent actionEvent) {
+        LOG.debug("change T");
         List<KeyValueString> list = new MockDatas().loadLocation();
         KeyValueString kv = list.get(5);
         autosuggest.itemProperty().setValue(kv);
