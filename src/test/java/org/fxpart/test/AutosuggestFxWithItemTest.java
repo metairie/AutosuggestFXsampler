@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.fxpart.combobox.AutosuggestComboBoxList;
+import org.fxpart.combobox.AutosuggestFX;
 import org.fxpart.combobox.KeyValueString;
 import org.fxpart.combobox.KeyValueStringImpl;
 import org.fxpart.mockserver.LocationBean;
@@ -46,7 +46,7 @@ public class AutosuggestFxWithItemTest extends ApplicationTest {
     //@Test
     public void scenario_simple_load() {
         // select Autosuggest
-        AutosuggestComboBoxList autosuggest = lookup("#autosuggest").queryFirst();
+        AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();
         autosuggest.setCacheDataMode();
         clickOn("#autosuggest");
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
@@ -58,7 +58,7 @@ public class AutosuggestFxWithItemTest extends ApplicationTest {
     @Test
     public void scenario_change_item() {
         // select Autosuggest
-        AutosuggestComboBoxList autosuggest = lookup("#autosuggest").queryFirst();
+        AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();
         autosuggest.setCacheDataMode();
         clickOn("#autosuggest");
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);

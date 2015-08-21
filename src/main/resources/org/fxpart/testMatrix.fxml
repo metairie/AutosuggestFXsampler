@@ -34,93 +34,93 @@
     <Label text="nodeItemFormatter" GridPane.columnIndex="0" GridPane.rowIndex="14"/>
 
     <!-- test V10 test default;-1; 0; 3; 101 -->
-    <AutosuggestComboBoxList fx:id="autosuggestH10V100" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH10V100" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH10V110" GridPane.columnIndex="2" GridPane.rowIndex="1" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH10V110" GridPane.columnIndex="2" GridPane.rowIndex="1" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH10V120" GridPane.columnIndex="3" GridPane.rowIndex="1" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH10V120" GridPane.columnIndex="3" GridPane.rowIndex="1" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH10V130" GridPane.columnIndex="4" GridPane.rowIndex="1" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH10V130" GridPane.columnIndex="4" GridPane.rowIndex="1" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH10V140" GridPane.columnIndex="5" GridPane.rowIndex="1" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH10V140" GridPane.columnIndex="5" GridPane.rowIndex="1" prefWidth="100"
                              minWidth="100"/>
 
     <!-- test V15 test if a/no search is trigger at startup -->
-    <AutosuggestComboBoxList fx:id="autosuggestH15V100" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH15V100" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH15V110" GridPane.columnIndex="2" GridPane.rowIndex="2" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH15V110" GridPane.columnIndex="2" GridPane.rowIndex="2" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH15V120" GridPane.columnIndex="3" GridPane.rowIndex="2" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH15V120" GridPane.columnIndex="3" GridPane.rowIndex="2" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH15V130" GridPane.columnIndex="4" GridPane.rowIndex="2" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH15V130" GridPane.columnIndex="4" GridPane.rowIndex="2" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH15V140" GridPane.columnIndex="5" GridPane.rowIndex="2" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH15V140" GridPane.columnIndex="5" GridPane.rowIndex="2" prefWidth="100"
                              minWidth="100"/>
 
     <!-- test V20 test if a/no free txt is accepted -->
-    <AutosuggestComboBoxList fx:id="autosuggestH20V100" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH20V100" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH20V110" GridPane.columnIndex="2" GridPane.rowIndex="3" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH20V110" GridPane.columnIndex="2" GridPane.rowIndex="3" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH20V120" GridPane.columnIndex="3" GridPane.rowIndex="3" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH20V120" GridPane.columnIndex="3" GridPane.rowIndex="3" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH20V130" GridPane.columnIndex="4" GridPane.rowIndex="3" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH20V130" GridPane.columnIndex="4" GridPane.rowIndex="3" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH20V140" GridPane.columnIndex="5" GridPane.rowIndex="3" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH20V140" GridPane.columnIndex="5" GridPane.rowIndex="3" prefWidth="100"
                              minWidth="100"/>
 
     <!-- test V25-->
     <!-- test V30 test if a/no full search-->
-    <AutosuggestComboBoxList fx:id="autosuggestH30V100" GridPane.columnIndex="1" GridPane.rowIndex="5" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH30V100" GridPane.columnIndex="1" GridPane.rowIndex="5" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH30V110" GridPane.columnIndex="2" GridPane.rowIndex="5" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH30V110" GridPane.columnIndex="2" GridPane.rowIndex="5" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH30V120" GridPane.columnIndex="3" GridPane.rowIndex="5" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH30V120" GridPane.columnIndex="3" GridPane.rowIndex="5" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH30V130" GridPane.columnIndex="4" GridPane.rowIndex="5" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH30V130" GridPane.columnIndex="4" GridPane.rowIndex="5" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH30V140" GridPane.columnIndex="5" GridPane.rowIndex="5" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH30V140" GridPane.columnIndex="5" GridPane.rowIndex="5" prefWidth="100"
                              minWidth="100"/>
 
     <!-- test V35 test if a/no case search is set up-->
-    <AutosuggestComboBoxList fx:id="autosuggestH35V100" GridPane.columnIndex="1" GridPane.rowIndex="6" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH35V100" GridPane.columnIndex="1" GridPane.rowIndex="6" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH35V110" GridPane.columnIndex="2" GridPane.rowIndex="6" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH35V110" GridPane.columnIndex="2" GridPane.rowIndex="6" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH35V120" GridPane.columnIndex="3" GridPane.rowIndex="6" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH35V120" GridPane.columnIndex="3" GridPane.rowIndex="6" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH35V130" GridPane.columnIndex="4" GridPane.rowIndex="6" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH35V130" GridPane.columnIndex="4" GridPane.rowIndex="6" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH35V140" GridPane.columnIndex="5" GridPane.rowIndex="6" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH35V140" GridPane.columnIndex="5" GridPane.rowIndex="6" prefWidth="100"
                              minWidth="100"/>
 
     <!-- test V40-->
     <!-- test V45-->
     <!-- test V50-->
     <!-- test V55 modify search item rule-->
-    <AutosuggestComboBoxList fx:id="autosuggestH55V100" GridPane.columnIndex="1" GridPane.rowIndex="10" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH55V100" GridPane.columnIndex="1" GridPane.rowIndex="10" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH55V110" GridPane.columnIndex="2" GridPane.rowIndex="10" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH55V110" GridPane.columnIndex="2" GridPane.rowIndex="10" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH55V120" GridPane.columnIndex="3" GridPane.rowIndex="10" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH55V120" GridPane.columnIndex="3" GridPane.rowIndex="10" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH55V130" GridPane.columnIndex="4" GridPane.rowIndex="10" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH55V130" GridPane.columnIndex="4" GridPane.rowIndex="10" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH55V140" GridPane.columnIndex="5" GridPane.rowIndex="10" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH55V140" GridPane.columnIndex="5" GridPane.rowIndex="10" prefWidth="100"
                              minWidth="100"/>
 
     <!-- test V60-->
     <!-- test V65 user stringTextFormatter-->
     <!-- test V70 user stringItemFormatter-->
-    <AutosuggestComboBoxList fx:id="autosuggestH70V100" GridPane.columnIndex="1" GridPane.rowIndex="13" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH70V100" GridPane.columnIndex="1" GridPane.rowIndex="13" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH70V110" GridPane.columnIndex="2" GridPane.rowIndex="13" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH70V110" GridPane.columnIndex="2" GridPane.rowIndex="13" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH70V120" GridPane.columnIndex="3" GridPane.rowIndex="13" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH70V120" GridPane.columnIndex="3" GridPane.rowIndex="13" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH70V130" GridPane.columnIndex="4" GridPane.rowIndex="13" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH70V130" GridPane.columnIndex="4" GridPane.rowIndex="13" prefWidth="100"
                              minWidth="100"/>
-    <AutosuggestComboBoxList fx:id="autosuggestH70V140" GridPane.columnIndex="5" GridPane.rowIndex="13" prefWidth="100"
+    <AutosuggestFX fx:id="autosuggestH70V140" GridPane.columnIndex="5" GridPane.rowIndex="13" prefWidth="100"
                              minWidth="100"/>
 
     <!-- test V75-->

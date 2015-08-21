@@ -7,7 +7,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import org.fxpart.combobox.AutosuggestComboBoxList;
+import org.fxpart.combobox.AutosuggestFX;
 import org.fxpart.combobox.KeyValue;
 import org.fxpart.combobox.KeyValueString;
 import org.fxpart.combobox.KeyValueStringImpl;
@@ -27,7 +27,7 @@ public class ControllerWithItem implements Initializable {
     private List<LocationBean> list = new MockDatas().loadLocationBeans();
 
     @FXML
-    AutosuggestComboBoxList<LocationBean, KeyValueString> autosuggest;
+    AutosuggestFX<LocationBean, KeyValueString> autosuggest;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

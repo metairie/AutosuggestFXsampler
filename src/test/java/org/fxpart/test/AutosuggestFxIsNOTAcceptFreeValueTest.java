@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import org.fxpart.combobox.AutosuggestComboBoxList;
+import org.fxpart.combobox.AutosuggestFX;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -42,7 +42,7 @@ public class AutosuggestFxIsNOTAcceptFreeValueTest extends ApplicationTest {
     @Test
     public void scenario_simple_load() {
         // select Autosuggest
-        AutosuggestComboBoxList autosuggest = lookup("#autosuggest").queryFirst();
+        AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();
         clickOn("#autosuggest");
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         push(KeyCode.ENTER);

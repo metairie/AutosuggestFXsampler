@@ -3,7 +3,7 @@ package org.fxpart;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import org.fxpart.combobox.AutosuggestComboBoxList;
+import org.fxpart.combobox.AutosuggestFX;
 import org.fxpart.combobox.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
@@ -20,9 +20,9 @@ public class ControllerMatrix implements Initializable {
     private List<LocationBean> list = new MockDatas().loadLocationBeans();
 
     @FXML
-    AutosuggestComboBoxList<LocationBean, KeyValueString> autosuggestH10V100, autosuggestH10V110;
+    AutosuggestFX<LocationBean, KeyValueString> autosuggestH10V100, autosuggestH10V110;
     @FXML
-    AutosuggestComboBoxList<LocationBean, KeyValueString> autosuggestH15V100, autosuggestH15V110;
+    AutosuggestFX<LocationBean, KeyValueString> autosuggestH15V100, autosuggestH15V110;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

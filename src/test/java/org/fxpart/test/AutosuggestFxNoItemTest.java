@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import org.fxpart.combobox.AutosuggestComboBoxList;
+import org.fxpart.combobox.AutosuggestFX;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
 import org.hamcrest.MatcherAssert;
@@ -46,7 +46,7 @@ public class AutosuggestFxNoItemTest extends ApplicationTest {
     @Test
     public void scenario_simple_search() {
         // select Autosuggest
-        AutosuggestComboBoxList autosuggest = lookup("#autosuggest").queryFirst();
+        AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();
         autosuggest.setCacheDataMode();
         autosuggest.setIgnoreCase(false);
         clickOn("#autosuggest");
@@ -70,7 +70,7 @@ public class AutosuggestFxNoItemTest extends ApplicationTest {
     //@Test
     public void scenario_ignore_case() {
         // select Autosuggest
-        AutosuggestComboBoxList autosuggest = lookup("#autosuggest").queryFirst();
+        AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();
         autosuggest.setLiveDataMode();
         autosuggest.setIgnoreCase(true);
         clickOn("#autosuggest");
@@ -96,7 +96,7 @@ public class AutosuggestFxNoItemTest extends ApplicationTest {
     //@Test
     public void scenario_full_search() {
         // select Autosuggest
-        AutosuggestComboBoxList autosuggest = lookup("#autosuggest").queryFirst();
+        AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();
         autosuggest.setLiveDataMode();
         autosuggest.setIsFullSearch(true);
         clickOn("#autosuggest");
