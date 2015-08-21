@@ -46,4 +46,9 @@ public class LocationBean implements CodeNameBean {
     public void setCode(String code) {
         this.code = code;
     }
+
+    @Override
+    public String toString() {
+        return code + "," + name + " locationbean[#" + hashCode() + "] ";
+    }
 }

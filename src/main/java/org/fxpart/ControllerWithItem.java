@@ -59,7 +59,7 @@ public class ControllerWithItem implements Initializable {
             @Override
             public KeyValueString apply(Observable observable) {
                 ObjectProperty op = (ObjectProperty) observable;
-                if (op == null) {
+                if (op == null || op.getValue() == null) {
                     return autosuggest.newInstanceOfT.apply(observable);
                 } else {
                     LocationBean lb = (LocationBean) op.getValue();
@@ -73,7 +73,7 @@ public class ControllerWithItem implements Initializable {
             @Override
             public LocationBean apply(Observable observable) {
                 ObjectProperty op = (ObjectProperty) observable;
-                if (op == null) {
+                if (op == null || op.getValue() == null) {
                     return autosuggest.newInstanceOfB.apply(observable);
                 } else {
                     KeyValue kv = (KeyValue) op.getValue();
@@ -90,6 +90,7 @@ public class ControllerWithItem implements Initializable {
         };
         Bindings.bindBidirectional(autosuggest.beanProperty(), myBeanProperty);
         // END of temporary code - to be removed
+
     }
 
     @Override
@@ -110,7 +111,8 @@ public class ControllerWithItem implements Initializable {
         LocationBean lb = new LocationBean();
         lb.setCode(list.get(3).getCode());
         lb.setName(list.get(3).getName());
-        myBeanProperty.setValue(lb);
+//       myBeanProperty.setValue(lb);
+        autosuggest.beanProperty().setValue(lb);
     }
 
     // change KV
