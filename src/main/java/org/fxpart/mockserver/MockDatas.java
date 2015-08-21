@@ -1,8 +1,7 @@
 package org.fxpart.mockserver;
 
 import javafx.collections.FXCollections;
-import org.fxpart.combobox.KeyValueString;
-import org.fxpart.combobox.KeyValueStringImpl;
+import org.fxpart.common.bean.KeyValueString;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,14 +41,14 @@ public class MockDatas {
 
     public static List<KeyValueString> loadStaticLocation() {
         // data for Location
-        KeyValueString lb1 = new KeyValueStringImpl("LO1", "Point of View 1");
-        KeyValueString lb2 = new KeyValueStringImpl("LO2", "Poland");
-        KeyValueString lb3 = new KeyValueStringImpl("LO3", "Forest");
-        KeyValueString lb4 = new KeyValueStringImpl("LO4", "Office");
-        KeyValueString lb5 = new KeyValueStringImpl("LO5", "Swimming pool");
-        KeyValueString lb6 = new KeyValueStringImpl("LO6", "Tribune");
-        KeyValueString lb7 = new KeyValueStringImpl("LO7", "Office 6");
-        KeyValueString lb8 = new KeyValueStringImpl("LO8", "Garden");
+        KeyValueString lb1 = new KeyValueString("LO1", "Point of View 1");
+        KeyValueString lb2 = new KeyValueString("LO2", "Poland");
+        KeyValueString lb3 = new KeyValueString("LO3", "Forest");
+        KeyValueString lb4 = new KeyValueString("LO4", "Office");
+        KeyValueString lb5 = new KeyValueString("LO5", "Swimming pool");
+        KeyValueString lb6 = new KeyValueString("LO6", "Tribune");
+        KeyValueString lb7 = new KeyValueString("LO7", "Office 6");
+        KeyValueString lb8 = new KeyValueString("LO8", "Garden");
         return Arrays.asList(lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8);
     }
 
@@ -69,14 +68,14 @@ public class MockDatas {
 
     public List<KeyValueString> loadLocation() {
         // data for Location
-        KeyValueString lb1 = new KeyValueStringImpl("LO1", "Point of View 1");
-        KeyValueString lb2 = new KeyValueStringImpl("LO2", "Poland");
-        KeyValueString lb3 = new KeyValueStringImpl("LO3", "Forest");
-        KeyValueString lb4 = new KeyValueStringImpl("LO4", "Office");
-        KeyValueString lb5 = new KeyValueStringImpl("LO5", "Swimming pool");
-        KeyValueString lb6 = new KeyValueStringImpl("LO6", "Tribune");
-        KeyValueString lb7 = new KeyValueStringImpl("LO7", "Office 6");
-        KeyValueString lb8 = new KeyValueStringImpl("LO8", "Garden");
+        KeyValueString lb1 = new KeyValueString("LO1", "Point of View 1");
+        KeyValueString lb2 = new KeyValueString("LO2", "Poland");
+        KeyValueString lb3 = new KeyValueString("LO3", "Forest");
+        KeyValueString lb4 = new KeyValueString("LO4", "Office");
+        KeyValueString lb5 = new KeyValueString("LO5", "Swimming pool");
+        KeyValueString lb6 = new KeyValueString("LO6", "Tribune");
+        KeyValueString lb7 = new KeyValueString("LO7", "Office 6");
+        KeyValueString lb8 = new KeyValueString("LO8", "Garden");
         return Arrays.asList(lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8);
     }
 
@@ -106,14 +105,14 @@ public class MockDatas {
 
     public List<KeyValueString> loadProfession() {
         // data for Location
-        KeyValueString lb1 = new KeyValueStringImpl("PR1", "Photographer 1");
-        KeyValueString lb2 = new KeyValueStringImpl("PR2", "Politic");
-        KeyValueString lb3 = new KeyValueStringImpl("PR3", "Priest");
-        KeyValueString lb4 = new KeyValueStringImpl("PR4", "Podiatrist");
-        KeyValueString lb5 = new KeyValueStringImpl("PR5", "Swimmer");
-        KeyValueString lb6 = new KeyValueStringImpl("PR6", "Spokesman");
-        KeyValueString lb7 = new KeyValueStringImpl("PR7", "Developer 6");
-        KeyValueString lb8 = new KeyValueStringImpl("PR8", "Gardener");
+        KeyValueString lb1 = new KeyValueString("PR1", "Photographer 1");
+        KeyValueString lb2 = new KeyValueString("PR2", "Politic");
+        KeyValueString lb3 = new KeyValueString("PR3", "Priest");
+        KeyValueString lb4 = new KeyValueString("PR4", "Podiatrist");
+        KeyValueString lb5 = new KeyValueString("PR5", "Swimmer");
+        KeyValueString lb6 = new KeyValueString("PR6", "Spokesman");
+        KeyValueString lb7 = new KeyValueString("PR7", "Developer 6");
+        KeyValueString lb8 = new KeyValueString("PR8", "Gardener");
         return Arrays.asList(lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8);
     }
 }

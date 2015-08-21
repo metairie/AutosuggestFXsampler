@@ -6,8 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.fxpart.combobox.AutosuggestFX;
-import org.fxpart.combobox.KeyValueString;
-import org.fxpart.combobox.KeyValueStringImpl;
+import org.fxpart.common.bean.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
 import org.hamcrest.MatcherAssert;
@@ -64,7 +63,7 @@ public class AutosuggestFxWithItemTest extends ApplicationTest {
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         List<LocationBean> list = new MockDatas().loadLocationBeans();
         // verify it's Tribune
-        KeyValueString kv = new KeyValueStringImpl(list.get(5).getCode(), list.get(5).getName());
+        KeyValueString kv = new KeyValueString(list.get(5).getCode(), list.get(5).getName());
         Platform.runLater(() -> {
                     autosuggest.itemProperty().setValue(kv);
                 });

@@ -5,8 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import org.fxpart.combobox.AutosuggestFX;
-import org.fxpart.combobox.KeyValueString;
-import org.fxpart.combobox.KeyValueStringImpl;
+import org.fxpart.common.bean.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
 import org.slf4j.Logger;
@@ -54,7 +53,7 @@ public class ControllerNoItem implements Initializable {
     // change B property
     public void change(ActionEvent actionEvent) {
         LOG.debug("change B");
-        KeyValueStringImpl kv = new KeyValueStringImpl(list.get(3).getCode(), list.get(3).getName());
+        KeyValueString kv = new KeyValueString(list.get(3).getCode(), list.get(3).getName());
         autosuggest.itemProperty().setValue(kv);
     }
 

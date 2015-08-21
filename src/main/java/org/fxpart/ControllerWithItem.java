@@ -8,9 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import org.fxpart.combobox.AutosuggestFX;
-import org.fxpart.combobox.KeyValue;
-import org.fxpart.combobox.KeyValueString;
-import org.fxpart.combobox.KeyValueStringImpl;
+import org.fxpart.common.bean.KeyValue;
+import org.fxpart.common.bean.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
 import org.slf4j.Logger;
@@ -49,7 +48,7 @@ public class ControllerWithItem implements Initializable {
         // set an item manually
         // no link between Location Bean and KeyValue bean
         // KeyValue bean and property
-        KeyValueString kvbean = new KeyValueStringImpl(lb.getCode(), lb.getName());
+        KeyValueString kvbean = new KeyValueString(lb.getCode(), lb.getName());
         autosuggest.itemProperty().setValue(kvbean);
 
         // --- 2 ---
@@ -64,8 +63,8 @@ public class ControllerWithItem implements Initializable {
                     return autosuggest.newInstanceOfT.apply(observable);
                 } else {
                     LocationBean lb = (LocationBean) op.getValue();
-                    KeyValue kv = new KeyValueStringImpl(lb.getCode(), lb.getName());
-                    return new KeyValueStringImpl(lb.getCode(), lb.getName());
+                    KeyValue kv = new KeyValueString(lb.getCode(), lb.getName());
+                    return new KeyValueString(lb.getCode(), lb.getName());
                 }
             }
         });
