@@ -96,7 +96,7 @@ public class ControllerWithItem implements Initializable {
     @Override
     protected void finalize() throws Throwable {
         super.finalize();
-        autosuggest.stopSearch();
+        autosuggest.stopFiltering();
     }
 
     // clear

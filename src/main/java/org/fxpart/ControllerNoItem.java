@@ -32,6 +32,7 @@ public class ControllerNoItem implements Initializable {
 //        // if loading a gauge is displayed
         autosuggestLazy.setSearchEngineMode();
         autosuggestLazy.setAcceptFreeTextValue(false);
+        autosuggestLazy.setAlwaysRefresh(true);
         autosuggestLazy.setDelay(500); // for having time to see loadindicator
         autosuggestLazy.setupAndStart(o -> new MockDatas().loadProfession(), item -> String.format("%s", item.getValue()), null);
 //        // don't change this
@@ -42,7 +43,7 @@ public class ControllerNoItem implements Initializable {
     @Override
     protected void finalize() throws Throwable {
         super.finalize();
-        autosuggest.stopSearch();
+        autosuggest.stopFiltering();
     }
 
     // clear
