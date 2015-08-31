@@ -23,10 +23,16 @@ public class ControllerMatrix implements Initializable {
     AutosuggestFX<LocationBean, KeyValueString> autosuggestH10V100, autosuggestH10V110;
     @FXML
     AutosuggestFX<LocationBean, KeyValueString> autosuggestH15V100, autosuggestH15V110;
+    @FXML
+    AutosuggestFX<LocationBean, KeyValueString> autosuggestH25V100, autosuggestH25V110;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        // don't change this
+        autosuggestH25V100.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
+        autosuggestH25V100.setLimitSearch(3);
+        autosuggestH25V100.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
+        // works well
     }
 
     @Override
