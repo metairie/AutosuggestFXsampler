@@ -33,7 +33,7 @@ public class ControllerWithItem implements Initializable {
         // don't change this
         autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
         autosuggest.setVisibleRowsCount(20);
-        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
+        autosuggest.setupFilter(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
         // works well
 
         // TODO BEGIN of temporary code - to be removed

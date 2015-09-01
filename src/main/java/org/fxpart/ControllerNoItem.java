@@ -34,10 +34,10 @@ public class ControllerNoItem implements Initializable {
         autosuggestLazy.setAcceptFreeTextValue(false);
         autosuggestLazy.setAlwaysRefresh(true);
         autosuggestLazy.setDelay(500); // for having time to see loadindicator
-        autosuggestLazy.setupAndStart(o -> new MockDatas().loadProfession(), item -> String.format("%s", item.getValue()), null);
+        autosuggestLazy.setupFilter(o -> new MockDatas().loadProfession(), item -> String.format("%s", item.getValue()));
 //        // don't change this
 
-        autosuggest.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
+        autosuggest.setupFilter(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
     }
 
     @Override

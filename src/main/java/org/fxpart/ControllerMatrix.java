@@ -31,7 +31,7 @@ public class ControllerMatrix implements Initializable {
         // don't change this
         autosuggestH25V100.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
         autosuggestH25V100.setLimitSearch(3);
-        autosuggestH25V100.setupAndStart(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()), null);
+        autosuggestH25V100.setupFilter(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
         // works well
     }
 
