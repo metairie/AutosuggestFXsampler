@@ -53,14 +53,12 @@ public class ControllerNoItem implements Initializable {
 
     // change B property
     public void change(ActionEvent actionEvent) {
-        LOG.debug("change B");
         KeyValueString kv = new KeyValueString(list.get(3).getCode(), list.get(3).getName());
         autosuggest.itemProperty().setValue(kv);
     }
 
     // change T KV
     public void changeKV(ActionEvent actionEvent) {
-        LOG.debug("change T");
         List<KeyValueString> list = new MockDatas().loadLocation();
         KeyValueString kv = list.get(5);
         autosuggest.itemProperty().setValue(kv);

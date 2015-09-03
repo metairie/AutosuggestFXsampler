@@ -33,7 +33,7 @@ public class ControllerWithItem implements Initializable {
         // don't change this
         autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
         autosuggest.setVisibleRowsCount(20);
-        autosuggest.setupFilter(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
+        autosuggest.setupFilter(o -> new MockDatas().loadLocation(), item -> String.format("%s . %s", item.getKey(), item.getValue()));
         // works well
 
         // TODO BEGIN of temporary code - to be removed
@@ -50,6 +50,7 @@ public class ControllerWithItem implements Initializable {
         // KeyValue bean and property
         KeyValueString kvbean = new KeyValueString(lb.getCode(), lb.getName());
         autosuggest.itemProperty().setValue(kvbean);
+        autosuggest.setDelay(100);
 
         // --- 2 ---
         myBeanProperty.setValue(lb);
