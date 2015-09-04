@@ -40,12 +40,6 @@ public class ControllerNoItem implements Initializable {
         autosuggest.setupFilter(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
-        autosuggest.stopFiltering();
-    }
-
     // clear
     public void clear(ActionEvent actionEvent) {
         autosuggest.itemProperty().setValue(null);
@@ -65,6 +59,7 @@ public class ControllerNoItem implements Initializable {
     }
 
     public void debug(ActionEvent actionEvent) {
-        autosuggest.getSkinControl().debug("from FXML click ");
+        //autosuggest.getSkinControl().debug("from FXML click ");
+        autosuggest.dispose();
     }
 }
