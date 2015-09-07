@@ -128,8 +128,7 @@ public class ControllerWithItem implements Initializable {
         autosuggest.getSkinControl().debug("from FXML click ");
         //LOG.debug(" myBean getName               : " + myBeanProperty.getValue().getName());
         //LOG.debug(" control bean getName         : " + autosuggest.beanProperty().getValue().getName());
-        LOG.debug(" control num row              : " + autosuggest.getVisibleRowsCount());
-
+        //LOG.debug(" control num row              : " + autosuggest.getVisibleRowsCount());
 //        LOG.debug(" control item getValue        : " + autosuggest.itemProperty().getValue().getValue());
 //        LOG.debug(" combo value getValue : " + autosuggest.getSkinControl().getCombo().valueProperty().getValue().getValue());
     }
