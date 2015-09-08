@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.fxpart.combobox.AutosuggestFX;
-import org.fxpart.common.bean.KeyValueString;
+import org.fxpart.mockserver.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
 import org.hamcrest.MatcherAssert;
@@ -65,8 +65,8 @@ public class AutosuggestFxWithItemTest extends ApplicationTest {
         // verify it's Tribune
         KeyValueString kv = new KeyValueString(list.get(5).getCode(), list.get(5).getName());
         Platform.runLater(() -> {
-                    autosuggest.itemProperty().setValue(kv);
-                });
+            autosuggest.itemProperty().setValue(kv);
+        });
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(list.get(5).getName()));
         // verify it's null

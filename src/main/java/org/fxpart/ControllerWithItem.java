@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import org.fxpart.combobox.AutosuggestFX;
 import org.fxpart.common.bean.KeyValue;
-import org.fxpart.common.bean.KeyValueString;
+import org.fxpart.mockserver.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
 import org.slf4j.Logger;

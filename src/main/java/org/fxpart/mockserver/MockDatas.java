@@ -1,7 +1,6 @@
 package org.fxpart.mockserver;
 
 import javafx.collections.FXCollections;
-import org.fxpart.common.bean.KeyValueString;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -115,4 +114,20 @@ public class MockDatas {
         KeyValueString lb8 = new KeyValueString("PR8", "Gardener");
         return Arrays.asList(lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8);
     }
+
+    // ----------
+    // other
+    // ----------
+    public List<KVIntegerDouble> loadKVID() {
+        KVIntegerDouble kvid1 = new KVIntegerDouble(1, 100.54D);
+        KVIntegerDouble kvid2 = new KVIntegerDouble(2, 120.36232D);
+        KVIntegerDouble kvid3 = new KVIntegerDouble(3, 1.04D);
+        KVIntegerDouble kvid4 = new KVIntegerDouble(4, 1D);
+        KVIntegerDouble kvid5 = new KVIntegerDouble(5, 0D);
+        KVIntegerDouble kvid6 = new KVIntegerDouble(6, 100.99D);
+        KVIntegerDouble kvid7 = new KVIntegerDouble(7, 12900.14D);
+        KVIntegerDouble kvid8 = new KVIntegerDouble(8, 982.44D);
+        return Arrays.asList(kvid1, kvid2, kvid3, kvid4, kvid5, kvid6, kvid7, kvid8);
+    }
+
 }
