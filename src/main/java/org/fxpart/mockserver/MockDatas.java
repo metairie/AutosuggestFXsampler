@@ -30,7 +30,7 @@ public class MockDatas {
         sb.append("{ \"id\": 2, \"code\":\"LO2\", \"name\": \"Poland\" },");
         sb.append("{ \"id\": 3, \"code\":\"LO3\", \"name\": \"Forest\" },");
         sb.append("{ \"id\": 4, \"code\":\"LO4\", \"name\": \"Office\" },");
-        sb.append("{ \"id\": 5, \"code\":\"LO5\", \"name\": \"Swimming pool\" },");
+        sb.append("{ \"id\": 5, \"code\":\"LO5\", \"name\": \"Swimming pool. The pools is nice and the sky is blue and a shiny sun is arisen ...\" },");
         sb.append("{ \"id\": 6, \"code\":\"LO6\", \"name\": \"Tribune\" },");
         sb.append("{ \"id\": 7, \"code\":\"LO7\", \"name\": \"Office 6 \" },");
         sb.append("{ \"id\": 8, \"code\":\"LO8\", \"name\": \"Garden\" }");
@@ -44,7 +44,7 @@ public class MockDatas {
         KeyValueString lb2 = new KeyValueString("LO2", "Poland");
         KeyValueString lb3 = new KeyValueString("LO3", "Forest");
         KeyValueString lb4 = new KeyValueString("LO4", "Office");
-        KeyValueString lb5 = new KeyValueString("LO5", "Swimming pool");
+        KeyValueString lb5 = new KeyValueString("LO5", "Swimming pool. The pools is nice and the sky is blue and a shiny sun is arisen ...");
         KeyValueString lb6 = new KeyValueString("LO6", "Tribune");
         KeyValueString lb7 = new KeyValueString("LO7", "Office 6");
         KeyValueString lb8 = new KeyValueString("LO8", "Garden");
@@ -57,7 +57,7 @@ public class MockDatas {
         LocationBean lb2 = new LocationBean("LO2", "Poland");
         LocationBean lb3 = new LocationBean("LO3", "Forest");
         LocationBean lb4 = new LocationBean("LO4", "Office");
-        LocationBean lb5 = new LocationBean("LO5", "Swimming pool");
+        LocationBean lb5 = new LocationBean("LO5", "Swimming pool. The pools is nice and the sky is blue and a shiny sun is arisen ...");
         LocationBean lb6 = new LocationBean("LO6", "Tribune");
         LocationBean lb7 = new LocationBean("LO7", "Office 6");
         LocationBean lb8 = new LocationBean("LO8", "Garden");
@@ -71,15 +71,11 @@ public class MockDatas {
         KeyValueString lb2 = new KeyValueString("LO2", "Poland");
         KeyValueString lb3 = new KeyValueString("LO3", "Forest");
         KeyValueString lb4 = new KeyValueString("LO4", "Office");
-        KeyValueString lb5 = new KeyValueString("LO5", "Swimming pool");
+        KeyValueString lb5 = new KeyValueString("LO5", "Swimming pool. The pools is nice and the sky is blue and a shiny sun is arisen ...");
         KeyValueString lb6 = new KeyValueString("LO6", "Tribune");
         KeyValueString lb7 = new KeyValueString("LO7", "Office 6");
         KeyValueString lb8 = new KeyValueString("LO8", "Garden");
         return Arrays.asList(lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8);
-    }
-
-    public static Collection<?> loadLocationStrings() {
-        return FXCollections.observableArrayList("Point of View", "Poland", "Forest", "Office", "Swimming pool", "Tribune", "Office", "Garden");
     }
 
     // ----------

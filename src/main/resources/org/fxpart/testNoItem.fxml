@@ -13,17 +13,16 @@
     <Button text="Debug" fx:id="debug" onAction="#debug" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
     <Label styleClass="table-view" text="noitem+free" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
 
-    <AutosuggestFX fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="300"
-                             minWidth="300" acceptFreeTextValue="true"/>
+    <AutosuggestFX fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" acceptFreeTextValue="true" prefWidth="200"  />
 
     <Label styleClass="table-view" text="lazy" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
     <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
-        <AutosuggestFX fx:id="autosuggestLazy" prefWidth="300" minWidth="300" acceptFreeTextValue="false"
-                                 lazyMode="true"/>
+        <!--<AutosuggestFX fx:id="autosuggestLazy"  acceptFreeTextValue="false" lazyMode="true"/>-->
+        <ComboBox editable="true" promptText="type here" />
     </HBox>
 
     <columnConstraints>
-        <ColumnConstraints maxWidth="100.0" minWidth="100.0" prefWidth="1000"/>
+        <ColumnConstraints maxWidth="100.0" minWidth="100.0" prefWidth="100"/>
         <ColumnConstraints maxWidth="216.0" minWidth="10.0" prefWidth="191.0"/>
         <ColumnConstraints maxWidth="781.0" minWidth="184.0" prefWidth="184.0"/>
         <ColumnConstraints maxWidth="590.0" minWidth="197.0" prefWidth="197.0"/>

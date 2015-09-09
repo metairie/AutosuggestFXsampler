@@ -32,7 +32,7 @@ public class ControllerNoItem implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-//        // if loading a gauge is displayed
+        // if loading a gauge is displayed
         autosuggestLazy.setSearchEngineMode();
         autosuggestLazy.setAcceptFreeTextValue(false);
         autosuggestLazy.setAlwaysRefresh(false);
