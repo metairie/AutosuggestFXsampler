@@ -61,8 +61,7 @@ public class MockDatas {
         LocationBean lb6 = new LocationBean("LO6", "Tribune");
         LocationBean lb7 = new LocationBean("LO7", "Office 6");
         LocationBean lb8 = new LocationBean("LO8", "Garden");
-        LocationBean lb9 = new LocationBean("LO9", "");
-        return Arrays.asList(lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8, lb9);
+        return Arrays.asList(lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8);
     }
 
     public List<KeyValueString> loadLocation() {

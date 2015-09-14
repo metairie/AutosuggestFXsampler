@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import org.fxpart.combobox.AutosuggestFX;
 import org.fxpart.common.bean.KeyValue;
-import org.fxpart.mockserver.KVIntegerDouble;
 import org.fxpart.mockserver.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
@@ -14,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -27,7 +25,7 @@ public class ControllerNoItem implements Initializable {
     AutosuggestFX<LocationBean, KeyValueString> autosuggest;
 
     @FXML
-    AutosuggestFX<?, KVIntegerDouble> autosuggestLazy;
+    AutosuggestFX<LocationBean, KeyValueString> autosuggestLazy;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -37,10 +35,9 @@ public class ControllerNoItem implements Initializable {
         autosuggestLazy.setAcceptFreeTextValue(false);
         autosuggestLazy.setAlwaysRefresh(false);
         autosuggestLazy.setDelay(500); // for having time to see loadindicator
-        List<? extends KeyValue> list = new ArrayList<>();
-        autosuggestLazy.setupFilter(o -> new MockDatas().loadKVID(), item -> String.format("%s", item.getValue()));
+        autosuggestLazy.setupFilter(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
 
-//        // don't change this
+        // don't change this
         autosuggest.promptTextProperty().setValue("Type HERE !!!!");
         autosuggest.setupFilter(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
     }

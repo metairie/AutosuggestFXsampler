@@ -7,8 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import org.fxpart.combobox.AutosuggestFX;
-import org.fxpart.mockserver.LocationBean;
-import org.fxpart.mockserver.MockDatas;
+import org.fxpart.mockserver.KeyValueString;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -18,7 +17,6 @@ import org.testfx.framework.junit.ApplicationTest;
 import org.testfx.util.WaitForAsyncUtils;
 
 import java.io.IOException;
-import java.util.List;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
@@ -47,13 +45,14 @@ public class AutosuggestFxIsAcceptFreeValueTest extends ApplicationTest {
         // select Autosuggest
         AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();
         clickOn("#autosuggest");
-        List<LocationBean> list = new MockDatas().loadLocationBeans();
-        write("qwertz");
+        String txt = "qwertz";
+        autosuggest.newInstanceOfT = o -> new KeyValueString("", txt);
+        write(txt);
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         push(KeyCode.ENTER);
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         push(KeyCode.ENTER);
-        MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is("qwertz"));
+        MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(txt));
     }
 
 }

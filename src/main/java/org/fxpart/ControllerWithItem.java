@@ -52,45 +52,45 @@ public class ControllerWithItem implements Initializable {
         autosuggest.itemProperty().setValue(kvbean);
         autosuggest.setDelay(100);
 
-        // --- 2 ---
-        myBeanProperty.setValue(lb);
-        // mapping between two Observable
-        // and setting a mapping B -> T
-        autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
-            @Override
-            public KeyValueString apply(Observable observable) {
-                ObjectProperty op = (ObjectProperty) observable;
-                if (op == null || op.getValue() == null) {
-                    return autosuggest.newInstanceOfT.apply(observable);
-                } else {
-                    LocationBean lb = (LocationBean) op.getValue();
-                    KeyValue kv = new KeyValueString(lb.getCode(), lb.getName());
-                    return new KeyValueString(lb.getCode(), lb.getName());
-                }
-            }
-        });
-        // and setting a mapping T -> B
-        autosuggest.setItemToBeamMapping(new Function<Observable, LocationBean>() {
-            @Override
-            public LocationBean apply(Observable observable) {
-                ObjectProperty op = (ObjectProperty) observable;
-                if (op == null || op.getValue() == null) {
-                    return autosuggest.newInstanceOfB.apply(observable);
-                } else {
-                    KeyValue kv = (KeyValue) op.getValue();
-                    LocationBean lb = new LocationBean(String.valueOf(kv.getKey()), String.valueOf(kv.getValue()));
-                    return lb;
-                }
-            }
-        });
-        autosuggest.newInstanceOfB = new Function<Observable, LocationBean>() {
-            @Override
-            public LocationBean apply(Observable observable) {
-                return new LocationBean();
-            }
-        };
-        Bindings.bindBidirectional(autosuggest.beanProperty(), myBeanProperty);
-        // END of temporary code - to be removed
+//        // --- 2 ---
+//        myBeanProperty.setValue(lb);
+//        // mapping between two Observable
+//        // and setting a mapping B -> T
+//        autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
+//            @Override
+//            public KeyValueString apply(Observable observable) {
+//                ObjectProperty op = (ObjectProperty) observable;
+//                if (op == null || op.getValue() == null) {
+//                    return autosuggest.newInstanceOfT.apply(observable);
+//                } else {
+//                    LocationBean lb = (LocationBean) op.getValue();
+//                    KeyValue kv = new KeyValueString(lb.getCode(), lb.getName());
+//                    return new KeyValueString(lb.getCode(), lb.getName());
+//                }
+//            }
+//        });
+//        // and setting a mapping T -> B
+//        autosuggest.setItemToBeamMapping(new Function<Observable, LocationBean>() {
+//            @Override
+//            public LocationBean apply(Observable observable) {
+//                ObjectProperty op = (ObjectProperty) observable;
+//                if (op == null || op.getValue() == null) {
+//                    return autosuggest.newInstanceOfB.apply(observable);
+//                } else {
+//                    KeyValue kv = (KeyValue) op.getValue();
+//                    LocationBean lb = new LocationBean(String.valueOf(kv.getKey()), String.valueOf(kv.getValue()));
+//                    return lb;
+//                }
+//            }
+//        });
+//        autosuggest.newInstanceOfB = new Function<Observable, LocationBean>() {
+//            @Override
+//            public LocationBean apply(Observable observable) {
+//                return new LocationBean();
+//            }
+//        };
+//        Bindings.bindBidirectional(autosuggest.beanProperty(), myBeanProperty);
+//        // END of temporary code - to be removed
 
     }
 
@@ -108,7 +108,6 @@ public class ControllerWithItem implements Initializable {
 
     // change B property
     public void changeB(ActionEvent actionEvent) {
-        LOG.debug("change B");
         LocationBean lb = new LocationBean();
         lb.setCode(list.get(3).getCode());
         lb.setName(list.get(3).getName());
@@ -118,7 +117,6 @@ public class ControllerWithItem implements Initializable {
 
     // change KV
     public void changeT(ActionEvent actionEvent) {
-        LOG.debug("change T");
         List<KeyValueString> list = new MockDatas().loadLocation();
         KeyValueString kv = list.get(5);
         autosuggest.itemProperty().setValue(kv);

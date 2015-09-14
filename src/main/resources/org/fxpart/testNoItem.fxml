@@ -17,8 +17,7 @@
 
     <Label styleClass="table-view" text="lazy" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
     <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
-        <!--<AutosuggestFX fx:id="autosuggestLazy"  acceptFreeTextValue="false" lazyMode="true"/>-->
-        <ComboBox editable="true" promptText="type here" />
+        <AutosuggestFX fx:id="autosuggestLazy"  prefWidth="300"/>
     </HBox>
 
     <columnConstraints>

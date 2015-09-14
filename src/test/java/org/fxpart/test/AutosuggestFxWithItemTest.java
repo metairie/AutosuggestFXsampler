@@ -42,7 +42,7 @@ public class AutosuggestFxWithItemTest extends ApplicationTest {
         stage.show();
     }
 
-    //@Test
+    @Test
     public void scenario_simple_load() {
         // select Autosuggest
         AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();

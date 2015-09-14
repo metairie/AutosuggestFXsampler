@@ -42,14 +42,16 @@ public class AutosuggestFxIsNOTAcceptFreeValueTest extends ApplicationTest {
     @Test
     public void scenario_simple_load() {
         // select Autosuggest
+        String txt = "qwertz";
         AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();
+        autosuggest.setCacheDataMode();
         clickOn("#autosuggest");
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         push(KeyCode.ENTER);
         push(KeyCode.END);
         push(KeyCode.CONTROL, KeyCode.A);
         push(KeyCode.DELETE);
-        write("");
+        write(txt);
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         push(KeyCode.ENTER);
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
