@@ -315,49 +315,6 @@ public class MatrixTest extends ApplicationTest {
         clear();
     }
 
-    @Test
-    public void scenario_autosuggestH40V100() {
-        String ASFX = buildName("H40", "V100");
-        // ---------------------------------------
-        // ignore case FALSE
-        AutosuggestFX autosuggest = lookup("#" + ASFX).queryFirst();
-        autosuggest.setSearchEngineMode();
-        autosuggest.setVisibleRowsCount(10);
-        autosuggest.setDelay(100);
-        autosuggest.setLazyMode(false);
-        autosuggest.setAcceptFreeTextValue(false);
-        autosuggest.setIsFullSearch(false);
-        autosuggest.setIgnoreCase(false);
-        autosuggest.setupFilter(ds -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
-        // open
-        clickOn("#" + ASFX);
-        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
-        write("po");
-        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
-        push(KeyCode.DOWN);
-        push(KeyCode.DOWN);
-        push(KeyCode.ENTER);
-        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
-        MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(list.get(4).getName()));
-        push(KeyCode.ENTER);
-        clear();
-
-        // ---------------------------------------
-        // ignore case
-        autosuggest.setIgnoreCase(true);
-        // open
-        clickOn("#" + ASFX);
-        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
-        write("po");
-        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
-        push(KeyCode.DOWN);
-        push(KeyCode.ENTER);
-        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
-        MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(list.get(0).getName()));
-        push(KeyCode.ENTER);
-        clear();
-    }
-
     private void clear() {
         push(KeyCode.ESCAPE);
         push(KeyCode.ESCAPE);
