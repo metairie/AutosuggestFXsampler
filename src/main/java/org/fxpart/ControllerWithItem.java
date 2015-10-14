@@ -4,6 +4,7 @@ import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -34,7 +35,8 @@ public class ControllerWithItem implements Initializable {
         autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
         autosuggest.setVisibleRowsCount(20);
         autosuggest.setMultiple(true);
-        autosuggest.setupFilter(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
+        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
+        autosuggest.setStringTextFormatter(item -> String.format("%s", item.getValue()));
         // works well
 
         // TODO BEGIN of temporary code - to be removed
@@ -53,10 +55,10 @@ public class ControllerWithItem implements Initializable {
         autosuggest.itemProperty().setValue(kvbean);
         autosuggest.setDelay(100);
 
-//        // --- 2 ---
+        // --- 2 ---
 //        myBeanProperty.setValue(lb);
-//        // mapping between two Observable
-//        // and setting a mapping B -> T
+        // mapping between two Observable
+        // and setting a mapping B -> T
 //        autosuggest.setBeanToItemMapping(new Function<Observable, KeyValueString>() {
 //            @Override
 //            public KeyValueString apply(Observable observable) {
@@ -91,7 +93,11 @@ public class ControllerWithItem implements Initializable {
 //            }
 //        };
 //        Bindings.bindBidirectional(autosuggest.beanProperty(), myBeanProperty);
-//        // END of temporary code - to be removed
+
+//        myBeanProperty.addListener((observable, oldValue, newValue) -> {
+//            autosuggest.beanProperty().setValue(newValue);
+//        });
+        // END of temporary code - to be removed
 
     }
 
@@ -103,9 +109,10 @@ public class ControllerWithItem implements Initializable {
 
     // clear
     public void clear(ActionEvent actionEvent) {
-        myBeanProperty.setValue(null);
+        //myBeanProperty.setValue(null);
+        autosuggest.beanProperty().setValue(null);
+        //autosuggest.itemProperty().setValue(null);
     }
-
 
     // change B property
     public void changeB(ActionEvent actionEvent) {

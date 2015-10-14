@@ -59,7 +59,7 @@ public class MatrixTest extends ApplicationTest {
         autosuggest.setCacheDataMode();
         autosuggest.setVisibleRowsCount(3);
         autosuggest.setDelay(100);
-        autosuggest.setupFilter(ds -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
+        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
         clickOn("#" + ASFX);
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         // open
@@ -128,7 +128,7 @@ public class MatrixTest extends ApplicationTest {
         autosuggest.setVisibleRowsCount(10);
         autosuggest.setDelay(100);
         autosuggest.setLazyMode(true);
-        autosuggest.setupFilter(ds -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
+        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
         MatcherAssert.assertThat(autosuggest.getItems().size(), Matchers.is(0));
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         // open
@@ -152,7 +152,7 @@ public class MatrixTest extends ApplicationTest {
         autosuggest.setDelay(100);
         autosuggest.setLazyMode(false);
         autosuggest.setAcceptFreeTextValue(false);
-        autosuggest.setupFilter(ds -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
+        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
         // open
         clickOn("#" + ASFX);
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
@@ -184,7 +184,7 @@ public class MatrixTest extends ApplicationTest {
         autosuggest.setDelay(100);
         autosuggest.setLazyMode(false);
         autosuggest.setAcceptFreeTextValue(false);
-        autosuggest.setupFilter(ds -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
+        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
         // open
         clickOn("#" + ASFX);
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
@@ -242,7 +242,7 @@ public class MatrixTest extends ApplicationTest {
         autosuggest.setLazyMode(false);
         autosuggest.setAcceptFreeTextValue(false);
         autosuggest.setIsFullSearch(false);
-        autosuggest.setupFilter(ds -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
+        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
         // open
         clickOn("#" + ASFX);
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
@@ -285,7 +285,7 @@ public class MatrixTest extends ApplicationTest {
         autosuggest.setAcceptFreeTextValue(false);
         autosuggest.setIsFullSearch(false);
         autosuggest.setIgnoreCase(false);
-        autosuggest.setupFilter(ds -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
+        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", ((KeyValue) item).getValue()));
         // open
         clickOn("#" + ASFX);
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);

@@ -35,11 +35,11 @@ public class ControllerNoItem implements Initializable {
         autosuggestLazy.setAcceptFreeTextValue(false);
         autosuggestLazy.setAlwaysRefresh(false);
         autosuggestLazy.setDelay(500); // for having time to see loadindicator
-        autosuggestLazy.setupFilter(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
+        autosuggestLazy.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
 
         // don't change this
         autosuggest.promptTextProperty().setValue("Type HERE !!!!");
-        autosuggest.setupFilter(o -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
+        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
     }
 
     // clear
@@ -62,6 +62,5 @@ public class ControllerNoItem implements Initializable {
 
     public void debug(ActionEvent actionEvent) {
         autosuggest.getSkinControl().debug("from FXML click ");
-        //autosuggest.dispose();
     }
 }
