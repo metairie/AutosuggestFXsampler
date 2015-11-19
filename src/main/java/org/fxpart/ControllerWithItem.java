@@ -1,15 +1,10 @@
 package org.fxpart;
 
-import javafx.beans.Observable;
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import org.fxpart.combobox.AutosuggestFX;
-import org.fxpart.common.bean.KeyValue;
 import org.fxpart.mockserver.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
@@ -19,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.function.Function;
 
 public class ControllerWithItem implements Initializable {
     private final static Logger LOG = LoggerFactory.getLogger(ControllerWithItem.class);
@@ -35,8 +29,8 @@ public class ControllerWithItem implements Initializable {
         autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
         autosuggest.setVisibleRowsCount(20);
         autosuggest.setMultiple(true);
-        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
-        autosuggest.setStringTextFormatter(item -> String.format("%s", item.getValue()));
+        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s - %s", item.getKey(), item.getValue()));
+
         // works well
 
         // TODO BEGIN of temporary code - to be removed
