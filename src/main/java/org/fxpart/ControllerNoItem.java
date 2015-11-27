@@ -32,6 +32,9 @@ public class ControllerNoItem implements Initializable {
 
         // if loading a gauge is displayed
         autosuggestLazy.setSearchEngineMode();
+        autosuggestLazy.setAutoselect(true);
+        autosuggestLazy.setIsFullSearch(true);
+        autosuggestLazy.setIgnoreCase(true);
         autosuggestLazy.setAcceptFreeTextValue(false);
         autosuggestLazy.setAlwaysRefresh(false);
         autosuggestLazy.setDelay(500); // for having time to see loadindicator
