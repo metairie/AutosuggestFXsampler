@@ -67,7 +67,7 @@ public class AutosuggestFxNoItemTest extends ApplicationTest {
         MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(list.get(0).getName()));
     }
 
-    //@Test
+    @Test
     public void scenario_ignore_case() {
         // select Autosuggest
         AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();
@@ -93,7 +93,7 @@ public class AutosuggestFxNoItemTest extends ApplicationTest {
         MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(list.get(4).getName()));
     }
 
-    //@Test
+    @Test
     public void scenario_full_search() {
         // select Autosuggest
         AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();

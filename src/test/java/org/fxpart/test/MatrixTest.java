@@ -315,6 +315,50 @@ public class MatrixTest extends ApplicationTest {
         clear();
     }
 
+
+//    @Test
+//    public void scenario_autosuggestH40V100() {
+//        String ASFX = buildName("H40", "V100");
+//        // ---------------------------------------
+//        // ignore case FALSE
+//        AutosuggestFX autosuggest = lookup("#" + ASFX).queryFirst();
+//        autosuggest.setAutoselect(true);
+//        autosuggest.setIsFullSearch(true);
+//        autosuggest.setIgnoreCase(true);
+//        autosuggest.promptTextProperty().setValue("Type HERE !!!!");
+//        autosuggest.setupFilter(
+//                () -> new MockDatas().loadLocation(),
+//                item -> String.format("%s - %s", ((KeyValue) item).getKey(), ((KeyValue) item).getValue()),
+//                item -> String.format("%s - %s", ((KeyValue) item).getKey(), ((KeyValue) item).getValue())
+//        );
+//
+//        // open
+//        clickOn("#" + ASFX);
+//        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
+//        write("LO2");
+//        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
+//        push(KeyCode.DOWN);
+//        push(KeyCode.DOWN);
+//        push(KeyCode.ENTER);
+//        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
+//        MatcherAssert.assertThat(autosuggest.getEditorText(),
+//                Matchers.is((String) autosuggest.getStringTextFormatter().apply(new KeyValueString(list.get(1).getCode(), list.get(1).getName()))));
+//        push(KeyCode.ENTER);
+//        clear();
+//
+//        // open
+//        clickOn("#" + ASFX);
+//        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
+//        write("LO9");
+//        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
+//        push(KeyCode.DOWN);
+//        push(KeyCode.ENTER);
+//        WaitForAsyncUtils.sleep(delay, MILLISECONDS);
+//        MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(""));
+//        push(KeyCode.ENTER);
+//        clear();
+//    }
+
     private void clear() {
         push(KeyCode.ESCAPE);
         push(KeyCode.ESCAPE);

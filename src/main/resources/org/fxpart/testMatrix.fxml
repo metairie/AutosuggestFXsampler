@@ -9,11 +9,6 @@
 
     <!-- H labels -->
     <Label text="count 0/0" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-    <Label text="T item empty" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-    <Label text="B value empty" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-    <Label text="T item loaded" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
-    <Label text="B value loaded" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
-    <Label text="BT loaded" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
 
     <!-- V labels -->
     <HBox GridPane.columnIndex="0" GridPane.rowIndex="1">
@@ -25,120 +20,45 @@
     <Label text="limit caracter" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
     <Label text="fullSearch" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
     <Label text="ignoreCase" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <Label text="autoselect" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
 
-    <Label text="filteringIndicator" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
-    <Label text="searchStatus" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
-    <Label text="controlShown" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
-    <Label text="searchFunction" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
-    <Label text="dataSource" GridPane.columnIndex="0" GridPane.rowIndex="11"/>
-    <Label text="stringTextFormatter" GridPane.columnIndex="0" GridPane.rowIndex="12"/>
-    <Label text="stringItemFormatter" GridPane.columnIndex="0" GridPane.rowIndex="13"/>
-    <Label text="nodeItemFormatter" GridPane.columnIndex="0" GridPane.rowIndex="14"/>
+    <!--<Label text="filteringIndicator" GridPane.columnIndex="0" GridPane.rowIndex="7"/>-->
+    <!--<Label text="searchStatus" GridPane.columnIndex="0" GridPane.rowIndex="8"/>-->
+    <!--<Label text="controlShown" GridPane.columnIndex="0" GridPane.rowIndex="9"/>-->
+    <!--<Label text="searchFunction" GridPane.columnIndex="0" GridPane.rowIndex="10"/>-->
+    <!--<Label text="dataSource" GridPane.columnIndex="0" GridPane.rowIndex="11"/>-->
+    <!--<Label text="stringTextFormatter" GridPane.columnIndex="0" GridPane.rowIndex="12"/>-->
+    <!--<Label text="stringItemFormatter" GridPane.columnIndex="0" GridPane.rowIndex="13"/>-->
+    <!--<Label text="nodeItemFormatter" GridPane.columnIndex="0" GridPane.rowIndex="14"/>-->
 
     <!-- test V10 test visible num rows 3;-1 -->
     <AutosuggestFX fx:id="autosuggestH10V100" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="100"
                    minWidth="100"/>
-    <!--<AutosuggestFX fx:id="autosuggestH10V110" GridPane.columnIndex="2" GridPane.rowIndex="1" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH10V120" GridPane.columnIndex="3" GridPane.rowIndex="1" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH10V130" GridPane.columnIndex="4" GridPane.rowIndex="1" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH10V140" GridPane.columnIndex="5" GridPane.rowIndex="1" prefWidth="100"-->
-    <!--minWidth="100"/>-->
 
     <!-- test V15 test lazy -->
     <AutosuggestFX fx:id="autosuggestH15V100" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="100"
                    minWidth="100"/>
-    <!--<AutosuggestFX fx:id="autosuggestH15V110" GridPane.columnIndex="2" GridPane.rowIndex="2" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH15V120" GridPane.columnIndex="3" GridPane.rowIndex="2" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH15V130" GridPane.columnIndex="4" GridPane.rowIndex="2" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH15V140" GridPane.columnIndex="5" GridPane.rowIndex="2" prefWidth="100"-->
-    <!--minWidth="100"/>-->
 
     <!-- test V20 test if a/no free txt is accepted -->
     <AutosuggestFX fx:id="autosuggestH20V100" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="100"
                    minWidth="100"/>
-    <!--<AutosuggestFX fx:id="autosuggestH20V110" GridPane.columnIndex="2" GridPane.rowIndex="3" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH20V120" GridPane.columnIndex="3" GridPane.rowIndex="3" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH20V130" GridPane.columnIndex="4" GridPane.rowIndex="3" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH20V140" GridPane.columnIndex="5" GridPane.rowIndex="3" prefWidth="100"-->
-    <!--minWidth="100"/>-->
 
     <!-- test V25 limit number caracter default 0 -->
     <AutosuggestFX fx:id="autosuggestH25V100" GridPane.columnIndex="1" GridPane.rowIndex="4" prefWidth="100"
                    minWidth="100"/>
-    <!--<AutosuggestFX fx:id="autosuggestH25V110" GridPane.columnIndex="2" GridPane.rowIndex="4" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH25V120" GridPane.columnIndex="3" GridPane.rowIndex="4" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH25V130" GridPane.columnIndex="4" GridPane.rowIndex="4" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH25V140" GridPane.columnIndex="5" GridPane.rowIndex="4" prefWidth="100"-->
-    <!--minWidth="100"/>-->
 
     <!-- test V30 test if a/no full search-->
     <AutosuggestFX fx:id="autosuggestH30V100" GridPane.columnIndex="1" GridPane.rowIndex="5" prefWidth="100"
                    minWidth="100"/>
-    <!--<AutosuggestFX fx:id="autosuggestH30V110" GridPane.columnIndex="2" GridPane.rowIndex="5" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH30V120" GridPane.columnIndex="3" GridPane.rowIndex="5" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH30V130" GridPane.columnIndex="4" GridPane.rowIndex="5" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH30V140" GridPane.columnIndex="5" GridPane.rowIndex="5" prefWidth="100"-->
-    <!--minWidth="100"/>-->
 
     <!-- test V35 test if a/no case search is set up-->
     <AutosuggestFX fx:id="autosuggestH35V100" GridPane.columnIndex="1" GridPane.rowIndex="6" prefWidth="100"
                    minWidth="100"/>
-    <!--<AutosuggestFX fx:id="autosuggestH35V110" GridPane.columnIndex="2" GridPane.rowIndex="6" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH35V120" GridPane.columnIndex="3" GridPane.rowIndex="6" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH35V130" GridPane.columnIndex="4" GridPane.rowIndex="6" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH35V140" GridPane.columnIndex="5" GridPane.rowIndex="6" prefWidth="100"-->
-    <!--minWidth="100"/>-->
 
-    <!-- test V40-->
-    <AutosuggestFX fx:id="autosuggestH55V100" GridPane.columnIndex="1" GridPane.rowIndex="10" prefWidth="100"
+    <!-- test V40 , if a code match exactly select the item -->
+    <AutosuggestFX fx:id="autosuggestH40V100" GridPane.columnIndex="1" GridPane.rowIndex="7" prefWidth="100"
                    minWidth="100"/>
-    <!-- test V45-->
-    <!-- test V50-->
-    <!-- test V55 modify search item rule-->
-    <!--<AutosuggestFX fx:id="autosuggestH55V100" GridPane.columnIndex="1" GridPane.rowIndex="10" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH55V110" GridPane.columnIndex="2" GridPane.rowIndex="10" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH55V120" GridPane.columnIndex="3" GridPane.rowIndex="10" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH55V130" GridPane.columnIndex="4" GridPane.rowIndex="10" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH55V140" GridPane.columnIndex="5" GridPane.rowIndex="10" prefWidth="100"-->
-    <!--minWidth="100"/>-->
 
-    <!-- test V60-->
-    <!-- test V65 user stringTextFormatter-->
-    <!-- test V70 user stringItemFormatter-->
-    <!--<AutosuggestFX fx:id="autosuggestH70V100" GridPane.columnIndex="1" GridPane.rowIndex="13" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH70V110" GridPane.columnIndex="2" GridPane.rowIndex="13" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH70V120" GridPane.columnIndex="3" GridPane.rowIndex="13" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH70V130" GridPane.columnIndex="4" GridPane.rowIndex="13" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-    <!--<AutosuggestFX fx:id="autosuggestH70V140" GridPane.columnIndex="5" GridPane.rowIndex="13" prefWidth="100"-->
-    <!--minWidth="100"/>-->
-
-    <!-- test V75-->
 
     <columnConstraints>
         <ColumnConstraints maxWidth="150.0" minWidth="150.0" prefWidth="150.0"/>

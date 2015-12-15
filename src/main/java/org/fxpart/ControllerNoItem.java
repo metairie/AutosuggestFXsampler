@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import org.fxpart.combobox.AutosuggestFX;
-import org.fxpart.common.bean.KeyValue;
 import org.fxpart.mockserver.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
 import org.fxpart.mockserver.MockDatas;
@@ -32,7 +31,7 @@ public class ControllerNoItem implements Initializable {
 
         // if loading a gauge is displayed
         autosuggestLazy.setSearchEngineMode();
-        autosuggestLazy.setAutoselect(true);
+        autosuggestLazy.setAutoselect(false);
         autosuggestLazy.setIsFullSearch(true);
         autosuggestLazy.setIgnoreCase(true);
         autosuggestLazy.setAcceptFreeTextValue(false);
@@ -42,12 +41,18 @@ public class ControllerNoItem implements Initializable {
 
         // don't change this
         autosuggest.promptTextProperty().setValue("Type HERE !!!!");
-        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
+        autosuggestLazy.setAcceptFreeTextValue(true);
+        autosuggest.setupFilter(() -> new MockDatas().loadLocation(),
+                item -> String.format("%s", item.getValue()),
+                item -> String.format("%s", item.getValue())
+        );
+
     }
 
     // clear
     public void clear(ActionEvent actionEvent) {
         autosuggest.itemProperty().setValue(null);
+        autosuggest.getSkinControl().showCombo();
     }
 
     // change B property

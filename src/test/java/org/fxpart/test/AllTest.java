@@ -1,6 +1,5 @@
 package org.fxpart.test;
 
-import org.junit.After;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -15,9 +14,6 @@ import org.junit.runners.Suite;
         , AutosuggestFxIsNOTAcceptFreeValueTest.class
 })
 public class AllTest {
-    @After
-    public void tearDown() {
-        System.out.println(" END -------------");
-    }
+
 }
 

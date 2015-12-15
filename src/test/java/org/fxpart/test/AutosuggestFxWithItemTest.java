@@ -51,10 +51,11 @@ public class AutosuggestFxWithItemTest extends ApplicationTest {
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
         List<LocationBean> list = new MockDatas().loadLocationBeans();
         // verify it's Point of view
-        MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(list.get(0).getName()));
+        MatcherAssert.assertThat(autosuggest.getEditorText(),
+                Matchers.is((String) autosuggest.getStringTextFormatter().apply(new KeyValueString(list.get(0).getCode(), list.get(0).getName()))));
     }
 
-    //@Test
+    @Test
     public void scenario_change_item() {
         // select Autosuggest
         AutosuggestFX autosuggest = lookup("#autosuggest").queryFirst();
@@ -68,7 +69,9 @@ public class AutosuggestFxWithItemTest extends ApplicationTest {
             autosuggest.itemProperty().setValue(kv);
         });
         WaitForAsyncUtils.sleep(delay, MILLISECONDS);
-        MatcherAssert.assertThat(autosuggest.getEditorText(), Matchers.is(list.get(5).getName()));
+        MatcherAssert.assertThat(
+                autosuggest.getEditorText(),
+                Matchers.is((String) autosuggest.getStringTextFormatter().apply(new KeyValueString(list.get(5).getCode(), list.get(5).getName()))));
         // verify it's null
         Platform.runLater(() -> {
             autosuggest.itemProperty().setValue(null);

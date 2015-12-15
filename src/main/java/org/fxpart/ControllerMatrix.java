@@ -16,7 +16,7 @@ public class ControllerMatrix implements Initializable {
     @FXML
     TextField visibleRow;
     @FXML
-    AutosuggestFX<LocationBean, KeyValueString> autosuggestH10V100, autosuggestH15V100, autosuggestH20V100, autosuggestH25V100, autosuggestH30V100, autosuggestH35V100;
+    AutosuggestFX<LocationBean, KeyValueString> autosuggestH10V100, autosuggestH15V100, autosuggestH20V100, autosuggestH25V100, autosuggestH30V100, autosuggestH35V100, autosuggestH40V100;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

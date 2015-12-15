@@ -4,6 +4,8 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import org.fxpart.combobox.AutosuggestFX;
 import org.fxpart.mockserver.KeyValueString;
 import org.fxpart.mockserver.LocationBean;
@@ -22,15 +24,18 @@ public class ControllerWithItem implements Initializable {
 
     @FXML
     AutosuggestFX<LocationBean, KeyValueString> autosuggest;
+    @FXML
+    AutosuggestFX<LocationBean, KeyValueString> autosuggest_contextmenu;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // don't change this
         autosuggest.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
         autosuggest.setVisibleRowsCount(20);
-        autosuggest.setMultiple(true);
-        autosuggest.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s - %s", item.getKey(), item.getValue()));
-
+        autosuggest.setupFilter(() -> new MockDatas().loadLocation(),
+                item -> String.format("%s - %s", item.getKey(), item.getValue()),
+                item -> String.format("%s", item.getValue())
+        );
         // works well
 
         // TODO BEGIN of temporary code - to be removed
@@ -93,6 +98,21 @@ public class ControllerWithItem implements Initializable {
 //        });
         // END of temporary code - to be removed
 
+
+        //-- context menu
+        autosuggest_contextmenu.setCacheDataMode(); // NOT ACCEPTING FREE VALUE
+        autosuggest_contextmenu.setVisibleRowsCount(20);
+        autosuggest_contextmenu.setupFilter(() -> new MockDatas().loadLocation(),
+                item -> String.format("%s - %s", item.getKey(), item.getValue()),
+                item -> String.format("%s", item.getValue())
+        );
+
+        // ---- context menu
+        MenuItem mm = new MenuItem("Open me");
+        ContextMenu localMenu = new ContextMenu(mm);
+        autosuggest_contextmenu.setContextMenu(localMenu);
+        mm.setOnAction(e -> System.out.println("Selected item: " + autosuggest_contextmenu.getEditorText()));
+
     }
 
     @Override
@@ -126,10 +146,9 @@ public class ControllerWithItem implements Initializable {
 
     public void debug(ActionEvent actionEvent) {
         autosuggest.getSkinControl().debug("from FXML click ");
-        //LOG.debug(" myBean getName               : " + myBeanProperty.getValue().getName());
-        //LOG.debug(" control bean getName         : " + autosuggest.beanProperty().getValue().getName());
-        //LOG.debug(" control num row              : " + autosuggest.getVisibleRowsCount());
-//        LOG.debug(" control item getValue        : " + autosuggest.itemProperty().getValue().getValue());
-//        LOG.debug(" combo value getValue : " + autosuggest.getSkinControl().getCombo().valueProperty().getValue().getValue());
+    }
+
+    public void ctx(ActionEvent actionEvent) {
+
     }
 }
