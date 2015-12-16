@@ -31,17 +31,17 @@ public class ControllerNoItem implements Initializable {
 
         // if loading a gauge is displayed
         autosuggestLazy.setSearchEngineMode();
-        autosuggestLazy.setAutoselect(false);
+        autosuggestLazy.setAutoselect(true);
         autosuggestLazy.setIsFullSearch(true);
         autosuggestLazy.setIgnoreCase(true);
         autosuggestLazy.setAcceptFreeTextValue(false);
         autosuggestLazy.setAlwaysRefresh(false);
-        autosuggestLazy.setDelay(500); // for having time to see loadindicator
+        autosuggestLazy.setDelay(200); // for having time to see loadindicator
         autosuggestLazy.setupFilter(() -> new MockDatas().loadLocation(), item -> String.format("%s", item.getValue()));
 
         // don't change this
         autosuggest.promptTextProperty().setValue("Type HERE !!!!");
-        autosuggestLazy.setAcceptFreeTextValue(true);
+        autosuggest.setAcceptFreeTextValue(true);
         autosuggest.setupFilter(() -> new MockDatas().loadLocation(),
                 item -> String.format("%s", item.getValue()),
                 item -> String.format("%s", item.getValue())
