@@ -123,9 +123,7 @@ public class ControllerWithItem implements Initializable {
 
     // clear
     public void clear(ActionEvent actionEvent) {
-        //myBeanProperty.setValue(null);
-        autosuggest.beanProperty().setValue(null);
-        //autosuggest.itemProperty().setValue(null);
+        autosuggest.clearAll();
     }
 
     // change B property
