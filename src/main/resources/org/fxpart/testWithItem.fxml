@@ -14,11 +14,9 @@
     <Label styleClass="table-view" text="Autosuggest: get location" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
     <Button text="context menu" onAction="#ctx" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
 
-    <AutosuggestFX fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="300"
-                             minWidth="300" acceptFreeTextValue="false" />
+    <AutosuggestFX fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" acceptFreeTextValue="false" GridPane.columnSpan="4" />
 
-    <AutosuggestFX fx:id="autosuggest_contextmenu" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="300"
-                   minWidth="300" acceptFreeTextValue="false"/>
+    <AutosuggestFX fx:id="autosuggest_contextmenu" GridPane.columnIndex="1" GridPane.rowIndex="3" acceptFreeTextValue="false"/>
 
     <columnConstraints>
         <ColumnConstraints maxWidth="10.0" minWidth="10.0" prefWidth="45.0"/>
