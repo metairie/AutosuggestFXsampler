@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.fxpart.combobox.AutosuggestFX?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="entityHeaderLayout" xmlns="http://javafx.com/javafx/8.0.40"
+      fx:controller="org.fxpart.ControllerGridPane">
+    <children>
+        <GridPane fx:id="headerGridPane" styleClass="form-grid-pane" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" prefWidth="50.0"/>
+
+                <!-- 2 column 2 -->
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="7.0" prefWidth="7.0"/>
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="50.0"/>
+
+                <!-- 4 column 3 -->
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="7.0" prefWidth="7.0"/>
+
+                <!-- 6 column 4 -->
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" prefWidth="60.0"/>
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="7.0" prefWidth="7.0"/>
+
+                <!-- 8 column 5 -->
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="100.0"/>
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="7.0" prefWidth="7.0"/>
+
+                <!-- 10 column 6 -->
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="35.0"/>
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="7.0" prefWidth="7.0"/>
+
+                <!-- 12 column 7 -->
+                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="50.0"/>
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="7.0" prefWidth="7.0"/>
+
+                <!-- 14 column 8 -->
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" prefWidth="50.0"/>
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="7.0" prefWidth="7.0"/>
+
+                <!-- 16 column 9 -->
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="50.0"/>
+
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="7.0" prefWidth="7.0"/>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="-Infinity"/>
+                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"/>
+
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES"/>
+                <RowConstraints vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Label text="Order no"/>
+                <TextField id="no" fx:id="customerOrderNo" editable="false" GridPane.columnIndex="2"/>
+                <ComboBox id="customerOrderSource" fx:id="customerOrderSource" editable="false" prefHeight="25.0"
+                          promptText="" styleClass="required" GridPane.columnIndex="16" GridPane.rowIndex="1"/>
+
+                <Label text="Status" GridPane.rowIndex="1"/>
+                <ComboBox id="customerOrderStatus" fx:id="customerOrderStatus" editable="false" promptText=""
+                          styleClass="required" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <TextField id="creationDate" fx:id="creationDate" editable="false" GridPane.columnIndex="10"
+                           GridPane.rowIndex="1"/>
+                <TextField id="lastUpdateUser" fx:id="lastUpdateUser" editable="false" GridPane.columnIndex="12"
+                           GridPane.rowIndex="1"/>
+                <Separator orientation="VERTICAL" GridPane.columnIndex="3" GridPane.rowSpan="2"/>
+                <Label fx:id="customerLabel" alignment="CENTER_RIGHT" text="Customer" GridPane.columnIndex="4"/>
+                <AutosuggestFX fx:id="customerCustomerOrderAutoSuggest" GridPane.columnIndex="6"/>
+                <Label alignment="CENTER_RIGHT" text="BillTo" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+
+                <AutosuggestFX fx:id="billToCustomerOrderAutoSuggest" GridPane.columnIndex="6" GridPane.rowIndex="1"/>
+
+                <Label fx:id="eventLabel" text="Event" GridPane.columnIndex="8"/>
+
+
+                <Label alignment="CENTER_RIGHT" text="Ref." GridPane.columnIndex="12"/>
+                <TextField id="reference" fx:id="referenceCustomerOrderTextField" editable="true"
+                           GridPane.columnIndex="14"/>
+
+                <Label alignment="CENTER_RIGHT" text="Bureau" GridPane.columnIndex="12" GridPane.rowIndex="1"/>
+
+            </children>
+        </GridPane>
+        <GridPane fx:id="headerExpandedGridPane" minHeight="0.0" styleClass="form-grid-pane-expanded">
+            <columnConstraints>
+                <!-- 0 left margin -->
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="30.0" prefWidth="30.0"/>
+
+                <!-- 1 label column 1 -->
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES"/>
+                <!-- 2 margin after column 1 -->
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="7.0" prefWidth="7.0"/>
+                <!-- 3 content column 1 -->
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES"/>
+                <!-- 4 margin after content column 1-->
+                <ColumnConstraints hgrow="NEVER" maxWidth="30.0" minWidth="30.0" prefWidth="30.0"/>
+
+                <!-- 5 label column 2 -->
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES"/>
+                <!-- 6 margin after column 2 -->
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="7.0" prefWidth="7.0"/>
+                <!-- 7 content column 2 -->
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES"/>
+                <!-- 8 margin after content column 2 -->
+                <ColumnConstraints hgrow="NEVER" maxWidth="7.0" minWidth="7.0" prefWidth="7.0"/>
+
+                <!-- 9 label column 3 -->
+                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"/>
+                <!-- 12 margin after content column 3 -->
+                <ColumnConstraints hgrow="NEVER" maxWidth="7.0" minWidth="7.0" prefWidth="7.0"/>
+
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES"/>
+                <RowConstraints vgrow="SOMETIMES"/>
+                <RowConstraints vgrow="SOMETIMES"/>
+                <RowConstraints vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <styleClass>
+                <String fx:value="header-bottom"/>
+                <String fx:value="form-grid-pane"/>
+            </styleClass>
+        </GridPane>
+    </children>
+</VBox>

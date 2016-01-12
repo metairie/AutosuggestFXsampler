@@ -11,7 +11,7 @@ import org.junit.runners.Suite;
         AutosuggestFxIsAcceptFreeValueTest.class
         , AutosuggestFxNoItemTest.class
         , AutosuggestFxWithItemTest.class
-        , AutosuggestFxIsNOTAcceptFreeValueTest.class
+        // TODO remove free value test, AutosuggestFxIsNOTAcceptFreeValueTest.class
 })
 public class AllTest {
 

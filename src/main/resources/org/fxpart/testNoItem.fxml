@@ -13,11 +13,11 @@
     <Button text="Debug" fx:id="debug" onAction="#debug" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
     <Label styleClass="table-view" text="noitem+free" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
 
-    <AutosuggestFX fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" acceptFreeTextValue="true" prefWidth="200"  />
+    <AutosuggestFX fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" acceptFreeTextValue="true"  />
 
     <Label styleClass="table-view" text="lazy" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
     <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
-        <AutosuggestFX fx:id="autosuggestLazy"  prefWidth="300"/>
+        <AutosuggestFX fx:id="autosuggestLazy"  />
     </HBox>
 
     <columnConstraints>
