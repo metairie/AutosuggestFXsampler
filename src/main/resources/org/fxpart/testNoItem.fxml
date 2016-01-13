@@ -3,36 +3,31 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import org.fxpart.combobox.AutosuggestFX?>
-<GridPane alignment="center" hgap="10" prefHeight="800.0" prefWidth="1200.0" vgap="10"
-          xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="org.fxpart.ControllerNoItem">
+<GridPane alignment="center" hgap="10" prefHeight="800.0" prefWidth="1200.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fxpart.ControllerNoItem">
 
-    <Button text="Change KV" fx:id="change" onAction="#changeKV" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-    <Button text="Change mProp" fx:id="changeP" onAction="#change" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-    <Button text="Clear Item" fx:id="clear" onAction="#clear" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
-    <Button text="Debug" fx:id="debug" onAction="#debug" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
-    <Label styleClass="table-view" text="noitem+free" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Button fx:id="change" onAction="#changeKV" text="Change KV" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+    <Button fx:id="changeP" onAction="#change" text="Change mProp" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+    <Button fx:id="clear" onAction="#clear" text="Clear Item" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+    <Button fx:id="debug" onAction="#debug" text="Debug" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    <Label styleClass="table-view" text="noitem+free" GridPane.columnIndex="0" GridPane.rowIndex="2" />
 
-    <AutosuggestFX fx:id="autosuggest" GridPane.columnIndex="1" GridPane.rowIndex="2" acceptFreeTextValue="true"  />
+    <AutosuggestFX fx:id="autosuggest" acceptFreeTextValue="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-    <Label styleClass="table-view" text="lazy" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-    <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
-        <AutosuggestFX fx:id="autosuggestLazy"  />
-    </HBox>
+    <Label styleClass="table-view" text="lazy" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <AutosuggestFX fx:id="autosuggestLazy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
     <columnConstraints>
-        <ColumnConstraints maxWidth="100.0" minWidth="100.0" prefWidth="100"/>
-        <ColumnConstraints maxWidth="216.0" minWidth="10.0" prefWidth="191.0"/>
-        <ColumnConstraints maxWidth="781.0" minWidth="184.0" prefWidth="184.0"/>
-        <ColumnConstraints maxWidth="590.0" minWidth="197.0" prefWidth="197.0"/>
-        <ColumnConstraints maxWidth="203.0" minWidth="10.0" prefWidth="203.0"/>
-        <ColumnConstraints maxWidth="203.0" minWidth="10.0" prefWidth="203.0"/>
+        <ColumnConstraints maxWidth="100.0" minWidth="100.0" prefWidth="100" />
+        <ColumnConstraints maxWidth="216.0" minWidth="10.0" prefWidth="191.0" />
+        <ColumnConstraints maxWidth="781.0" minWidth="184.0" prefWidth="184.0" />
+        <ColumnConstraints maxWidth="590.0" minWidth="197.0" prefWidth="197.0" />
+        <ColumnConstraints maxWidth="203.0" minWidth="10.0" prefWidth="203.0" />
+        <ColumnConstraints maxWidth="203.0" minWidth="10.0" prefWidth="203.0" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="30.0"/>
-        <RowConstraints maxHeight="36.0" minHeight="0.0" prefHeight="30.0"/>
-        <RowConstraints maxHeight="36.0" minHeight="0.0" prefHeight="30.0"/>
-        <RowConstraints maxHeight="89.0" minHeight="53.0" prefHeight="59.0"/>
-        <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+        <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints maxHeight="36.0" minHeight="0.0" prefHeight="30.0" />
+        <RowConstraints maxHeight="36.0" minHeight="0.0" prefHeight="30.0" />
+        <RowConstraints maxHeight="89.0" minHeight="53.0" prefHeight="59.0" />
     </rowConstraints>
 </GridPane>
