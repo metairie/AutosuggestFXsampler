@@ -42,6 +42,7 @@ public class ControllerNoItem implements Initializable {
         // don't change this
         autosuggest.promptTextProperty().setValue("Type HERE !!!!");
         autosuggest.setAcceptFreeTextValue(true);
+        autosuggest.setIsFullSearch(true);
         autosuggest.setupFilter(() -> new MockDatas().loadLocation(),
                 item -> String.format("%s", item.getValue()),
                 item -> String.format("%s", item.getValue())
