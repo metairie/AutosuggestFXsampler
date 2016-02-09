@@ -23,6 +23,12 @@ public class LocationBean implements CodeNameBean {
         this.name = v;
     }
 
+    public LocationBean(LocationBean locationBean) {
+        id = locationBean.id;
+        code = locationBean.code;
+        name = locationBean.name;
+    }
+
     public long getId() {
         return id;
     }
